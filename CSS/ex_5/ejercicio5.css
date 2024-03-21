@@ -1,0 +1,74 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+
+/*-- Básico ----------------------------------------------------------*/
+ul, ul li { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p, form { margin: 0; padding: 0; }
+.clear { clear: both; }
+img { border: none; }
+
+article { margin: 1em;} /* ARTICLES DEFINITS AMB ELEMENT (NO CLASSE) */
+article img {margin: 0.5em;} /* MARGE IMATGES DELS ARTICLES DEFINIT DINS L'ELEMENT ARTICLE. Funciona! */
+
+/*-- Layout ----------------------------------------------------------*/
+#contenedor {
+  width: 90%;
+  max-width: 900px;
+  width: expression(document.body.clientWidth > 901? "900px": "auto");
+  margin: 0 auto;
+}
+
+/* BORDERS ORIGINALS que s'han canviat:
+#cabecera, #menu, #lateral, #contenido, #contenido #principal, #contenido #secundario, #pie {
+  border: 2px solid #777;
+} */
+
+#cabecera { clear: both; padding: 1em; }
+
+#cabecera #logo h1 { background-image: url("logo.gif"); background-size:contain; background-repeat:no-repeat; }
+
+#noticias, #publicidad, #principal, #secundario
+  {padding: 0.5em; border: 1px;} 
+
+#noticias {border-style: solid; border-color: #C5C5C5;} /* BORDER Gris */
+#publicidad {border-style: dotted; border-color: #CC6600;} /* BORDER Color discontinuo */
+#secundario {border-style: solid; border-color: #CC6600;} /* BORDER Color */
+
+#secundario h2 {background-color:#DB905C; padding: 2em;} /* COLOR FONDO I PADDING */
+#noticias, #pie {background-color: #F8F8F8;}
+
+/* background-image: url("fondo_menu.gif"); 
+<img src="foto_cara.png" alt="Elsa" width="140">
+*/
+
+#menu { clear: both; padding: 0.5em; margin-bottom: 0.5em; border-bottom: 1px solid #004C99; background-image: url("fondo_menu.gif");}
+#lateral { float: left; width: 20%; }
+#contenido { float: right; width: 78%; }
+#contenido #principal { float: left; width: 73%; }
+#contenido #secundario { float: right; width: 20%; }
+
+#publicidad { margin-top: 1em; background-color: #FFF6CD;}
+
+#pie { clear: both; padding-top: 0.5em; padding-bottom: 0.5em; margin-top: 1em; border-top: 1px solid #C5C5C5; border-bottom: 1px solid #C5C5C5;}
+
+
+/*-- Cabecera --------------------------------------------------------*/
+#cabecera #logo { float: left; }
+#cabecera #buscador { float: right; }
+
+/*-- Menu ------------------------------------------------------------*/
+#menu ul#menu_principal li { display: inline; float: left; }
+
+/*-- Sección Principal -----------------------------------------------*/
+#contenido #principal .articulo img { width: 100px; float: left; }
+
+/*-- Pie de página ---------------------------------------------------*/
+#pie .enlaces   { float: left; }
+#pie .copyright { float: right; }
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
