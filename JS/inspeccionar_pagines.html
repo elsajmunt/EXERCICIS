@@ -1,0 +1,30 @@
+
+
+
+<script>
+// PENDENT MIRAR (DOC de Laura):
+let url = window.document.URL;
+document.getElementById("contingut").innerHTML ="***************"+ url;// para pint
+
+let links  = window.document.links;
+console.log(links);
+for (let i = 0; i<links.length; i++) {
+console.log("textContent", links[i].textContent);
+
+let imatges= document.images; //para inspeccionas las imagenes
+console.log (imatges)
+
+console.log("SRC de la primera imatge: 0 ", imatges[0].getAttribute("src"));
+console.log("SRC de la primera imatge: 1 ", imatges[1].getAttribute("src"));//otra manera de inspeccionar imagenes si sabemos el num total imagenes
+
+let elsFormularisQueTeLaMevaPagina= document.forms
+for (let index = 0; index < elsFormularisQueTeLaMevaPagina.length; index++) {
+   let unForm = elsFormularisQueTeLaMevaPagina[index];
+   let id = unForm.id;
+   console.log("FORM "+index+": id:"+id+" ",unForm);
+   let elsElements = unForm.elements;
+   for (let j=0; j<elsElements.length; j++) {
+       let unElement = elsElements[j];
+       console.log(unElement.name);     
+   }
+ </script>

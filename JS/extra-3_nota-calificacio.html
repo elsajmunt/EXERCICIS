@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+		<meta charset=UTF8>
+	</head> 
+
+    <body>
+        <h1>JavaScript: Exercicis Extras</h1>
+        <h2>Exercici 3: Nota</h2>
+        <p>Pide una nota (número). Muestra la calificación según la nota:</p>
+        <p id="demo_nota"></p>
+        <p id="demo_escriunumero"></p> <!-- Avisa que ha d'escriure un Número-->
+        <p id="demo_muydeficiente"></p>
+        <p id="demo_insuficiente"></p>
+        <p id="demo_suficiente"></p>
+        <p id="demo_bien"></p>
+        <p id="demo_notable"></p>
+
+
+        <script>
+            let nota = parseInt( prompt("Escriu la teva Nota")); // parseInt: perquè ho tracti com a número.
+            console.log(typeof nota) // Mirar si ho tracte com a Número, String...
+            console.log ("Nota: "+nota+".") // Veure el valor introduit...
+
+            if(isNaN(nota)) {
+                document.getElementById("demo_escriunumero").innerHTML = "Has d'escriure un número.";
+                console.log("Has d'escriure un número.");   
+            } 
+            
+            else{
+                if(nota<3) { // Pendent Arreglar operació...
+                    document.getElementById("demo_muydeficiente").innerHTML = "0-3: Muy deficiente";
+                    console.log("0-3: Muy deficiente.");
+                }               
+                if(nota>=3 && nota <=5) { // Pendent Arreglar operació...
+                    document.getElementById("demo_insuficiente").innerHTML = "3-5: Insuficiente";
+                    console.log("3-5: Insuficiente");
+                }
+
+                if(nota>5 && nota <=6) { // Pendent Arreglar operació...
+                    document.getElementById("demo_suficiente").innerHTML = "6: Suficiente";
+                    console.log("6: Suficiente");
+                }
+
+                if(nota>6 && nota <=7) { // Pendent Arreglar operació...
+                    document.getElementById("demo_bien").innerHTML = "7: Bien";
+                    console.log("7: Bien");
+                }
+                
+                if(nota>7 && nota <=9) { // Pendent Arreglar operació...
+                    document.getElementById("demo_notable").innerHTML = "8-9: Notable";
+                    console.log("8-9: Notable");
+                }
+                // 7-9: Notable
+            }    
+            
+            document.getElementById("demo_nota").innerHTML = "Nota: "+nota+".";
+        </script>
+    </body>
+</html>

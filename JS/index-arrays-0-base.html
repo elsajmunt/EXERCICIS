@@ -151,8 +151,13 @@
             document.addEventListener("DOMContentLoaded", function() {
             let products = getProducts();
             escriureTaula(products);
-
             })
+
+// PROVA MOSTRAR URL DEL LA PÀGINA: 
+    function getURLActualPage() {
+    let url = document.URL;
+      document.getElementById("demo").innerHTML = url;
+    }
         </script>
     </head>
     <body>
@@ -165,5 +170,8 @@
         <a href="#"  onclick="javascript:filtraPer('carns')">[Filtra per carns]</a>&nbsp;
         <a href="#"  onclick="javascript:filtraPer('fruites')">[Filtra per fruites]</a>
         <table id="tauladeProductes" border="1"></table>
+    <br>
+    <button onclick="getURLActualPage()">Mostra la URL d'aquesta pàgina >></button>
+    <p id="demo"></p>
     </body>
 </html>
