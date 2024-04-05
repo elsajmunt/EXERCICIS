@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+		<meta charset=UTF8>
+	</head> 
+
+    <body>
+        <h1>JavaScript: Exercicis Extras</h1>
+        <h2>Exercici 1: Edat</h2>
+        <p>Pide la edad y si es mayor de 18 años indica que ya puede conducir.</p>
+
+        <script>
+            let edat = parseInt( prompt("Escriu la teva edat")); // parseInt: perquè ho tracti com a número.
+            console.log(typeof edat) // Mirar si ho tracte com a Número, String...
+            console.log (edat) // Veure el valor introduit...
+
+            if(isNaN(edat)) {
+                console.log("Has d'escriure un número.");
+            } 
+            
+            else{
+                if(edat<18) {
+                    console.log("Tens menys de 18 anys! Encara no pots conduir.");
+                }               
+                if(edat>=18) {
+                    console.log("Tens més de 18 anys! Pots conduir!");
+                }
+            }                 
+        </script>
+
+    </body>
+</html>

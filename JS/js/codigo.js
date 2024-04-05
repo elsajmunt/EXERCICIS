@@ -1,0 +1,1 @@
+alert ("JS mola molt! Text escrit des del doc Codigo.js");

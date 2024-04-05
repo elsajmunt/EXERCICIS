@@ -1,0 +1,59 @@
+<HTML>
+    <HEAD>
+        <SCRIPT>
+            function getRandom(min, max) {
+                let value = Math.random() * (max - min) + min;
+                return parseInt(value);         
+            }
+
+            function print(missatge) {
+                console.log(missatge);
+                missatge+="<br>";
+                document.getElementById("sortida").innerHTML+=missatge;
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                          
+            let numIntents = 0;
+            const maximIntents = 5; // Màxim Intents que es poden fer
+                             
+                let theNumber = getRandom(1, 100);
+                console.log(theNumber); // Ensenya el Número per endevinar ;)
+
+                let esElFinal = false;
+
+                while (!esElFinal) {                  
+                    //print("Quin número creus que és?. En cas de voler abandonar escriu -1");
+                    n = prompt("Quin número creus que és?. En cas de voler abandonar escriu -1");
+
+                    numIntents=numIntents+1; //Suma el número d'Intents
+                    console.log("Has fet "+ numIntents+ " intents.");
+                        
+                    if (n<0) {
+                        print("Gràcies per participar. Fins aviat"); // Abandonar
+                        esElFinal = true;
+                    }
+                    else if (n < theNumber) {
+                        print("El nombre que cerques és més gran");
+                    }
+                    else if (n > theNumber) {
+                        print("El nombre que cerques és més petit");
+                    }
+                    else if (n == theNumber) {
+                        print("Ho has encertat era el "+theNumber+"!! Has necessitat "+numIntents+" intents.");
+                        esElFinal = true;
+                    }
+
+                    if (!esElFinal && (numIntents >= maximIntents)) { // Màxim Intents que es poden fer
+                        print("Ho sentim! Has superat el número d'intents!");
+                        esElFinal = true;
+                    }
+                }
+            });
+        </SCRIPT>        
+    </HEAD>
+
+    <BODY>
+        <DIV id="sortida"></DIV>
+    </BODY>
+</HTML>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <h1>JavaScript Arrays</h1>
+    <h2>Mesos de l'Any</h2>
+    <p id="demo_mesos"></p>
+
+    <script>
+    const mesos = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"];
+    let element ="" // Per crear un espai entre cada element (mesos)
+    
+    for (let i = 0; i < mesos.length; i++) { // Regla bàsica
+        if (i>0) {
+            element = element + ", "+ mesos[i]; // Per evitar que surti la coma (,) al principi. 
+        }else{
+            element = mesos[i];
+        }       
+        console.log(mesos[i]);  
+    }
+
+    document.getElementById("demo_mesos").innerHTML = element;
+
+    // console.log(mesos);
+    //             console.log(mesos[0]);
+    //             console.log(mesos[1]);
+    //             console.log(mesos[2]);
+    //             console.log(mesos[3]);
+    //             console.log(mesos[4]);
+    //             console.log(mesos[5]);
+    //             console.log(mesos[6]);          
+    </script>
+
+    </body>
+</html>
