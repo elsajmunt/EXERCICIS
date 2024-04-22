@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form action="" method="post">
+            <div>
+              <label>Texto:</label>
+                 <textarea cols="40" rows="5" name="texto" onKeyDown="valida_longitud()" onKeyUp="valida_longitud()"></textarea>
+            </div> 
+            <div>
+                   <label>Caracteres:</label>
+                   <input type="text" name="caracteres" size="4" disabled> (*) N&uacute;mero m&aacute;ximo de car&aacute;cteres = 25
+            </div>
+         </form>
+         
+         <script>
+         contenido_textarea = ""
+         num_caracteres_permitidos = 25
+         
+         function valida_longitud(){
+            num_caracteres = document.forms[0].texto.value.length
+            console.log(contenido_textarea)
+            if (num_caracteres > num_caracteres_permitidos) {
+               document.forms[0].texto.value = contenido_textarea
+            }else{
+               contenido_textarea = document.forms[0].texto.value
+            }
+         
+            if (num_caracteres >= num_caracteres_permitidos){
+               document.forms[0].caracteres.style.color="#ff0000";
+            }else{
+               document.forms[0].caracteres.style.color="#000000";
+            }
+            cuenta()
+         }
+         
+         function cuenta(){
+            document.forms[0].caracteres.value=document.forms[0].texto.value.length
+         }
+         </script>
+    </body>
+</html>

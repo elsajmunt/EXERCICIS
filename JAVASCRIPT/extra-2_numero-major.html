@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+		<meta charset=UTF8>
+	</head> 
+
+    <body>
+        <h1>JavaScript: Exercicis Extras</h1>
+        <h2>Exercici 2: Número Major</h2>
+        <p>Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.</p>
+
+        <script>
+            let numero1 = parseInt( prompt("Escriu el 1r número")); // parseInt: perquè ho tracti com a número.
+            let numero2 = parseInt( prompt("Escriu el 2n número"));
+            
+            console.log(typeof numero1) // Mirar si ho tracte com a Número, String...
+
+            console.log (numero1) // Veure el valor introduit...
+            console.log (numero2) // Veure el valor introduit...
+
+            if(isNaN(numero1) || isNaN(numero2)) {
+                console.log("Has d'escriure un número.");
+            } 
+            
+            else{
+                if(numero1<numero2) {
+                    console.log(numero1 +" és més petit que " + numero2);
+                }               
+                if(numero1>numero2) {
+                    console.log(numero1 +" és més gran que " + numero2);
+                }
+            }                 
+        </script>
+
+    </body>
+</html>

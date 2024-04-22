@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+		<meta charset=UTF8>
+	</head> 
+
+    <body>
+        <h1>JavaScript: Formulari</h1>
+
+        <form name="myForm">
+            <input type="text" id="name" required>
+            <input type="submit" value="send">
+       <!-- <button>Enviar</button>  Aquest Botó funcionaria igual que el de dalt  -->
+        </form>
+
+        <script>
+            let myInput = document.getElementById("name")
+
+            miInput.addEventListener('input',()=> {
+                miInput.SetCustomValidity('')
+                miInput.checkValidity()
+            
+            })
+
+            miInput.addEventListener('invalid', ()=>{
+                miInput.SetCustomValidity("Has d'omplir aquest camp!")
+            })
+        </script>
+
+    </body>
+</html>

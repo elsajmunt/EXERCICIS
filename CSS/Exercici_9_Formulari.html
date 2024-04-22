@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>CSS: Formulari</title>
+		<meta charset=UTF8>
+	</head> 
+    <style>
+/* -- PROVA DOS COLUMNES AMB CONTINGUT FIXE (que No Fluexi...) -------*/
+* {
+  box-sizing: border-box; /* Coloca les 2 CAPSES AL COSTAT */
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width:50%;
+  padding: 10px;
+  height: 400px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*--------------------------------------------------------------------- */
+/*    .columnes2 { 
+      column-count: 2; / COLUMNES AMB CONTINGUT QUE FLUEIX...(No Fixe!) Opció 1  /
+    } */
+
+    input[type=text],[type=email], [type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block; /* Provar */
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    box-sizing: border-box;
+    }
+
+input[type=submit] {
+    width: 30%;
+    background-color: #085f0b;
+    color: white;
+    padding: 14px 6px; 
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: block;
+    margin-top: 5px; /* Prova  per Controlar espais del Botó*/
+    margin-bottom: 125px; /* Prova */
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
+
+/* Copia del BOTÓ Submit Anterior: 
+    input[type=submit] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px; 
+    margin: 8px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    } */
+
+    input[type=submit]:hover {
+    background-color: red;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    }
+    </style>
+<body>
+
+<h3>Exercici 9: CSS: Formulari</h3>
+
+<div>
+  <div class="row">
+    <div class="column">
+      <form action="/action_page.php">
+        <table></table>
+        <label for="fname">Nom</label>
+        <input type="text" id="fname" name="firstname" placeholder="Escriu nom..">
+
+        <label for="lname">Primer Cognom</label>
+        <input type="text" id="lname" name="lastname" placeholder="Escriu 1r cognom..">
+
+        <label for="lname2">Segon Cognom</label>
+        <input type="text" id="lname2" name="lastname2" placeholder="Escriu 2n cognom..">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Escriu l'email..">
+      </div>
+
+        <div class="column">
+        <label for="fdireccio">Direcció</label>
+        <input type="text" id="fdireccio" name="fdireccio" placeholder="Carrer, Número, Pis, Porta..">
+        <input type="text" id="fcodipostal" name="fcodipostal" placeholder="Codi postal..">
+        <input type="text" id="fmunicipi" name="fmunicipi" placeholder="Municipi..">
+
+        <label for="pais">Provincia</label>
+        <select id="provincia" name="provincia">
+          <option value="barcelona">Barcelona</option>
+          <option value="girona">Girona</option>
+          <option value="tarragona">Tarragona</option>
+          <option value="lleida">Lleida</option>
+        </select>
+
+        <label for="telefon">Telèfon</label>
+        <input type="number" id="telefon" name="telefon" placeholder="Escriu el telèfon..">
+        </div>
+  </div>
+    <input type="submit" value="Dona't d'Alta >>">
+  </form>
+</div>
+
+</body>
+</html>
