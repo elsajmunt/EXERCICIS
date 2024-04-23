@@ -41,16 +41,19 @@ body {
 label {
     display: block;
     margin-bottom: 5px;
+    font-family: serif;
+    font-size: 22px; /* Nou canvi. Pujar al GidUp!!! */
+    color:#f2796e; /* Nou canvi. Pujar al GidUp!!! */
 }
 
 #formulario div input {
     width: 100%;
-    height: 40px;
-    border-radius: 8px;
+    height: 60px;
+    border-radius: 12px;
     outline: none;
     border: 2px solid #c4c4c4;
     padding: 0 30px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
 }
 
 #formulario div {
@@ -81,7 +84,7 @@ input:focus {
 }
 
 .error {
-    font-size: 14.5px;
+    font-size: 16px;
     margin-top: 5px;
 }
 
@@ -115,16 +118,14 @@ button:hover {
 
 <body>
     <div class="container">
-<p>PROVA SI PUJA AL GidUp!!!!!</p>
-        <form id="formulario">
-            <div class="titulo">Empezar</div>
 
-            <!-- Entrada para nombre de Usuario -->
+        <form onsubmit="return validarFormulario()" id="formulario"><!-- id formulario d'estils CSS. Prova Funció JS -->       
+            <div class="titulo">Completa el Formulario</div>
 
+            <!-- Entrada NOM USUARI ------------------------------>
             <div>
                 <label for="nombreDeUsuario">Nombre de Usuario</label>
-                <i class="fas fa-user"></i>
-
+                <i class="fas fa-user"></i> <!-- Icona Usuari -->
                 <input
                         type="text"
                         name="username"
@@ -132,14 +133,30 @@ button:hover {
                         placeholder="Introducir nombre"
                 />
 
+               <!-- <span id="nombreError_id" style="font-size: small; color: #f2796e;"></span><br> Mostra Avís ERROR -->
+                <span id="nombreError_id" class="error"></span><!-- Mostra Avís ERROR. ESTIL amb CLASSE -->
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-
                 <div class="error"></div>
-
             </div>
-            <!-- Entrada de Correo Electrónico -->
 
+            <!-- Entrada EDAT ------------------------------>
+            <div>
+                <label for="edadDeUsuario">Edad</label>
+                <i class="fas fa-user"></i> <!-- Icona Usuari. Buscar Edad! -->
+                <input
+                        type="text"
+                        name="userage"
+                        id="edadDeUsuario"
+                        placeholder="Introducir edad"
+                />
+                <span id="edadError_id" style="font-size: small; color: #f2796e;"></span><!-- <<<<< CANVIAR ESTIL amb CLASSE -->
+                <i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="error"></div>
+            </div>  
+
+            <!-- Entrada EMAIL -------------------------------->
             <div>
                 <label for="correoElectronico">Correo Electrónico</label>
                 <i class="far fa-envelope"></i>
@@ -147,9 +164,10 @@ button:hover {
                 <input
                         type="email"
                         name="email"
-                        id="correoElectronico"
+                        id="emailDeUsuario"
                         placeholder="abc@gmail.com"
                 />
+                <span id="emailError_id" style="font-size: small; color: #f00;"></span> <!-- <<<<< CANVIAR ESTIL amb CLASSE -->
 
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
@@ -157,32 +175,94 @@ button:hover {
                 <div class="error"></div>
 
             </div>
-            <!--   Entrada de contraseña -->
 
+            <!--   Entrada CONTRASENYA ----------------------------------------->
             <div>
                 <label for="contrasena">Contraseña</label>
                 <i class="fas fa-lock"></i>
-
                 <input
                         type="password"
                         name="password"
-                        id="contrasena"
+                        id="contrasenaDeUsuario"
                         placeholder="Introducir contraseña"
                 />
-
+                <span id="contrasenaError_id" style="font-size: small; color: #f00;"></span><!-- <<<<< CANVIAR ESTIL amb CLASSE -->
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-
                 <div class="error"></div>
-
             </div>
 
-            <!-- otro código aquí -->
-
+            <!-- BOTÓ --------------->
             <button id="btn" type="submit">Enviar</button>
-
 
         </form>
     </div>
-</body>
+</body> 
+
+<script>
+    function validarFormulario(){   // PROVA Funciona JS      
+        
+        let nombre = document.getElementById("nombreDeUsuario").value.trim() // Cambio "nombre" per "nombreDeUsuario" 
+        let nombreError = document.getElementById("nombreError_id") //accedo al elemento span nombreError_id.     
+        let onlyLetters = /^[A-Za-z]+$/;   
+        console.log(nombre)
+
+        let edad = document.getElementById("edadDeUsuario").value.trim()           
+        let edadError = document.getElementById("edadError_id") //accedo al elemento span edadError_id.
+        let onlyNumbers = /^[0-9]+$/;
+
+        let email = document.getElementById("emailDeUsuario").value.trim()           
+        let emailError = document.getElementById("emailError_id") //accedo al elemento span emailError_id. 
+        let arrobaRequired = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+        let contrasena = document.getElementById("contrasenaDeUsuario").value.trim()           
+        let contrasenaError = document.getElementById("contrasenaError_id") //accedo al elemento span edadError_id.
+        let LettersNumbers = /^[A-Za-z]+[0-9]+$/; 
+
+        let NoError= true // Per Acceptar Enviar
+        
+        if(nombre.length==0){ // NOM OBLIGATORI --------------
+            nombreError.innerHTML = "El campo nombre es obligatorio"
+            NoError = false
+        }else if (!(onlyLetters.test(nombre))){ // formato
+            nombreError.innerHTML = "El campo solo permite letras."
+            NoError = false
+        }else{
+            nombreError.innerHTML =""
+        }
+
+        if(edad.length==0){  // EDAT OBLIGATORI --------------
+            edadError.innerHTML = "El campo edad es obligatorio"
+            NoError=false
+        }else if (!(onlyNumbers.test(edad))){ // formato
+            edadError.innerHTML = "El campo solo permite numeros"
+            NoError = false
+        } else{
+            edadError.innerHTML = ""
+        }   
+
+        if(email.length==0){  // EMAIL OBLIGATORI --------------
+            emailError.innerHTML = "El campo email es obligatorio"
+            NoError=false
+        }else if (!(arrobaRequired.test(email))){ // formato
+            emailError.innerHTML = "El campo debe añadir un email"
+            NoError = false
+        } else{
+            emailError.innerHTML = ""
+        }  
+
+        if(contrasena.length==0){ // CONTRASENYA OBLIGATORI --------------
+            contrasenaError.innerHTML = "El campo Contraseña es obligatorio"
+            NoError = false
+        }else if (!(LettersNumbers.test(contrasena))){ // formato. PROVANT...!!  <<<<<
+            contrasenaError.innerHTML = "El campo debe tener letras y números." // Sempre surt, amb lletres i números també!!!?
+            NoError = false
+        }else{
+            contrasenaError.innerHTML ="Contrasenya Correcta!"
+        }
+    
+        return NoError //Si no hay ningun error ENVIAR el formulario. (NoError=true)          
+    }
+</script>
+
 </html>
