@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Formulari amb CSS i JS. Prova Guardar al GidUp</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    <style>
@@ -34,9 +34,10 @@ body {
 }
 
 .titulo {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 20px;
+    color:#f2796e;
 }
 label {
     display: block;
@@ -218,8 +219,7 @@ button:hover {
 
         let contrasena = document.getElementById("contrasenaDeUsuario").value.trim()           
         let contrasenaError = document.getElementById("contrasenaError_id") //accedo al elemento edadError_id.
-
-        let LettersNumbers = /[A-Za-z]+[0-9]+$/; /* Obliga posar PRIMER LLETRES i després NÚMEROS
+        let LettersNumbers = /[A-Za-z0-9]+$/; /* Obliga posar PRIMER LLETRES i després NÚMEROS 
         /* let LettersNumbers = /[A-Za-z+0-9]+$/; PROVA */
         /* let LettersNumbers = /^[A-Za-z0-9]+$/; PROVA */
 
@@ -230,7 +230,7 @@ button:hover {
             NoError = false
         }else if (!(onlyLetters.test(nombre))){ // formato
             nombreError.innerHTML = "El campo solo permite letras."
-            NoError = false
+            NoError = false // No envia Formulari
         }else{
             nombreError.innerHTML =""
         }
@@ -262,7 +262,7 @@ button:hover {
             contrasenaError.innerHTML = "El campo debe tener letras y números." // Sempre surt Avís! amb lletres i números també!!!?
             NoError = false
         }else{
-            contrasenaError.innerHTML ="Contrasenya Correcta!"
+            contrasenaError.innerHTML ="Contrasenya Correcta!!!!"
         }
         console.log("contrasena: ", contrasena);
         console.log("LettersNumbers: ", LettersNumbers);
