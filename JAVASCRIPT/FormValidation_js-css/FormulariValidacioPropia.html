@@ -3,14 +3,14 @@
     <head>
     </head>
     <body>
-        <form onsubmit="return validarFormulario()"> <!-- Opció 2 // true envia, false no envia -->
-            <input type="text" name="nombre" id="nombre" placeholder="introducir nombre"><br>
+        <form onsubmit="return validarFormulario()"> <!-- true: envia, false: no envia -->
+            <input type="text" name="nombre" id="nombre_id" placeholder="introducir nombre"><br> <!-- name: Surt valor a la url de resposta -->
             <span id="nombreError_id" style="font-size: small; color: #f00;"></span>
             <br>
             <input type="text" name="edad" id="edad" placeholder="introducir edad"><br>
             <span id="edadError_id" style="font-size: small; color: #f00;"></span>
             <br>
-            <input type="text" name="email" id="email" placeholder="introducir Email"><br>
+            <input type="text" name="correoelectronico" id="email" placeholder="introducir Email"><br>
             <span id="emailError_id" style="font-size: small; color: #f00;"></span>
             <br>
             <input type="submit" value="Send">
@@ -19,7 +19,7 @@
     <script>
         function validarFormulario(){         
             
-            let nombre = document.getElementById("nombre").value.trim()
+            let nombre = document.getElementById("nombre_id").value.trim()
             console.log(nombre)
             let onlyLetters = /^[A-Za-z]+$/;
             let onlyNumbers = /^[0-9]+$/;
