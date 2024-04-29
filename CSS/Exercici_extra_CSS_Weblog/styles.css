@@ -21,14 +21,56 @@ body {font-family:Arial, Helvetica, sans-serif}
     font-weight:lighter; 
     font-size: 18px;
     padding-top:8%;
+    color:white;
+    margin-right: 20px;
     }
 
-  /* Copia:
-#barra-superior-navegacio {
-    background-color: black;
-    color:white;
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
+  #contingut {
+    width: 80%;
+    margin: 0 auto; /* Centra sempre el bloc */
+    padding-top: 25px;
+    /* background-color: rgb(232, 247, 202); PER PROVAR Colocació de capsa...*/
   }
-  */
+
+  .titols {
+    font-weight:bold; 
+    font-size: 21px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+
+  .data {
+    text-align: right;
+    font-size: 13px;
+    font-weight:bold; 
+  }
+
+  .autor {
+    font-size: 17px;
+    color:rgb(32, 57, 167);
+    margin-bottom: 5px;
+  }
+
+  .programa {
+    margin-top: 5px; /* No Funciona!? */
+    margin: 0 auto; /* Centra sempre el bloc */
+    width: 85%;
+    white-space: pre-line; /* o pre-wrap *//* Fa que saltin les línies de text. */
+  }
+
+  .dates-programa {
+    font-weight:bold; 
+    font-size: 17px;
+ /* white-space: pre-line;  o pre-wrap *//* PROVA que saltin les línies de text... */
+  }
+
+  .link-programa {
+    font-weight:lighter; 
+    color:rgb(32, 57, 167);
+    margin-bottom: 5px;
+   /* white-space: pre-line; */ /* o pre-wrap */
+  }
+
+  
+
+
