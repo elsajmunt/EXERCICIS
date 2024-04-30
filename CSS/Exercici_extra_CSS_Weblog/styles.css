@@ -37,6 +37,12 @@ body {font-family:Arial, Helvetica, sans-serif}
     font-size: 21px;
     margin-top: 10px;
     margin-bottom: 8px;
+  } 
+
+  .subtitols {
+    font-weight:bold; 
+    font-size: 17px;
+ /* white-space: pre-line;  o pre-wrap *//* PROVA que saltin les línies de text... */
   }
 
   .data {
@@ -47,7 +53,7 @@ body {font-family:Arial, Helvetica, sans-serif}
 
   .autor {
     font-size: 17px;
-    color:rgb(32, 57, 167);
+    color:rgb(196, 66, 5);
     margin-bottom: 5px;
   }
 
@@ -58,15 +64,48 @@ body {font-family:Arial, Helvetica, sans-serif}
     white-space: pre-line; /* o pre-wrap *//* Fa que saltin les línies de text. */
   }
 
-  .dates-programa {
-    font-weight:bold; 
-    font-size: 17px;
- /* white-space: pre-line;  o pre-wrap *//* PROVA que saltin les línies de text... */
-  }
-
-  .link-programa {
+  a {  /* Enllaços generals */
     font-weight:lighter; 
-    color:rgb(32, 57, 167);
+    color:rgb(196, 66, 5);
     margin-bottom: 5px;
    /* white-space: pre-line; */ /* o pre-wrap */
   }
+
+  .links { /* Només per Enllaços d'estil diferent ?  */
+    font-weight:lighter; 
+    color:rgb(32, 57, 167);
+    margin-bottom: 5px;
+  }
+
+
+  table { /* TAULA ------------------------ */
+    border-collapse: collapse;  /* Fusiona línies de cada celda (elimina línia doble) */
+    width: 80%;
+  /*margin-top: 25px;  No Funciona */
+    white-space: nowrap; /* Mantenir Text sempre en una sola línia */
+    margin: 0 auto; /* Centra sempre el bloc */
+   /* display: flex; */
+   /* justify-content: center; */
+   font-size: 14px;
+   
+  }
+
+  table, th {   
+    background-color: rgb(221, 215, 215);
+    text-align: left;
+    padding: 8px;
+  }
+  
+  td { 
+    border: 1px solid rgb(192, 188, 188);
+    border-left: none;
+    border-right: none;
+    background-color: white;
+    padding: 4px;
+  }
+
+tfoot tr td { /* Footer de la Taula */
+    background-color: rgb(221, 215, 215);
+    font-weight:bold; 
+    text-align: right;
+  }  
