@@ -145,4 +145,10 @@ tfoot tr td { /* Footer de la Taula */
     color:rgb(196, 66, 5);
     font-weight:bold;
     }    
+
+  .data-comentari {
+    font-size: 12px;
+    color:rgb(138, 135, 135);
+    } 
+    
     
