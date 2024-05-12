@@ -24,6 +24,12 @@ header { /* HEADER Formulari Inici Sesió */
     color:rgb(213, 43, 1);
     }
 
+    h2 {
+      text-align:center ;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      color:rgb(148, 146, 146);
+      }
+
   #contingut {
       padding: 15px;
       text-align:center ;
@@ -32,7 +38,7 @@ header { /* HEADER Formulari Inici Sesió */
   label {
     display: block;
     font-family: serif;
-    font-size: 20px; 
+    font-size: 22px; 
     color:rgb(168, 167, 166);
     }
       

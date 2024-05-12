@@ -36,7 +36,7 @@
     <header id=header-usuari> <!-- HEADER Pàgina Privada Usuari -->
         <div class="logo">
             <a href="index.html">
-                <img src="logo.jpg" alt="Ves a l'Inici">
+                <img src="imatges/logo.jpg" alt="Ves a l'Inici">
             </a>
         </div>
         <div>            
