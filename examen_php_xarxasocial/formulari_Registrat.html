@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=UTF8>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="css/estils.css">
+    <title>Xarxa Social: Registre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header><!-- HEADER -->
+        <img src="imatges/logo.jpg" alt="Logo" width="120" height="88" >
+<!--    <a href="index.html"><img src="imatges/logo.jpg" alt="Logo" width="120" height="88" ></a>-->
+    </header>
+
+    <div id="contingut">
+        <form onsubmit="return validarFormulario()"><!-- Formulari crida a la Funció JS amb restriccions -->       
+            <h1>Registra't</h1>
+            <h2>Introdueix les teves dades</h2>
+
+            <!-- Entrada NOM USUARI ------------------------------>
+            <div>               
+                <label for="nombreDeUsuario">Nom i Cognom</label>
+                <i class="fas fa-user"></i> <!-- Icona Usuari (de Biblioteca stylesheet)-->
+                <input
+                        type="text"
+                        name="username"
+                        id="nombreDeUsuario"
+                        placeholder="Introducir nombre"
+                />
+                <div id="nombreError_id" class="error"></div><!-- Mostra Avís CAMPS OBLIGATORIS. ESTIL amb Classe -->
+                <div class="error"></div><!-- No cal ?? -->             
+            </div><br>
+
+            <!-- Entrada EDAT ------------------------------->
+            <div>
+                <label for="edadDeUsuario">Edat</label>
+                <i class="fa fa-child"></i> <!-- Icona per Edad -->
+                <input
+                        type="text"
+                        name="userage"
+                        id="edadDeUsuario"
+                        placeholder="Introducir edad"
+                />
+        <!--   <span id="edadError_id" class="error"></span> span (No controla Distancia superior)--->
+                <div id="edadError_id" class="error"></div> <!--Controla Distancia amb div -->
+                <div class="error"></div>
+            </div><br>
+
+        <!-- Entrada DATA NAIXEMENT ------------------------------->
+            <div>
+                <label for="dataNaixement">Data naixement</label>
+                <i class="fa-regular fa-calendar"></i>
+                <input type="date" id="birthday" name="birthday">
+            </div><br>
+
+            <!-- Entrada EMAIL -------------------------------->
+            <div>
+                <label for="correoElectronico">Correo Electrònic</label>
+                <i class="far fa-envelope"></i>
+                <input
+                        type="text"
+                        name="email"
+                        id="emailDeUsuario"
+                        placeholder="abc@gmail.com"
+                />
+                <div id="emailError_id" class="error"></div> 
+                <div class="error"></div>
+            </div><br>
+
+            <!--   Entrada CONTRASENYA ----------------------------------------->
+            <div>
+                <label for="contrasena">Contrasenya</label>
+                <i class="fas fa-lock"></i>
+                <input
+                        type="password"
+                        name="password"
+                        id="contrasenaDeUsuario"
+                        placeholder="Introducir contraseña"
+                />
+                <div id="contrasenaError_id" class="error"></div>
+                <div class="error"></div>
+            </div><br>
+
+            <!-- BOTÓ ------------------------------------------->
+            <button id="btn" type="submit">Enviar <i class="fa-solid fa-chevron-right"></i></button>
+
+        </form>
+    </div>
+
+    <footer> <!-- FOOTER -->
+        <p>Copyright 2024 Informació Legal Política de Privacitat</p>
+    </footer>
+
+</body> 
+    <script>
+        function validarFormulario(){    
+            
+            let nombre = document.getElementById("nombreDeUsuario").value.trim() // Cambio "nombre" per "nombreDeUsuario" 
+            let nombreError = document.getElementById("nombreError_id") //accedo al elemento nombreError_id.     
+            let onlyLetters = /^[A-Za-z]+$/;   
+            console.log(nombre)
+
+            let edad = document.getElementById("edadDeUsuario").value.trim()           
+            let edadError = document.getElementById("edadError_id") 
+            let onlyNumbers = /^[0-9]+$/;
+
+            let email = document.getElementById("emailDeUsuario").value.trim()           
+            let emailError = document.getElementById("emailError_id") 
+            let arrobaRequired = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+            let contrasena = document.getElementById("contrasenaDeUsuario").value.trim()           
+            let contrasenaError = document.getElementById("contrasenaError_id") 
+            let LettersNumbers = /[A-Za-z0-9]+$/; /* Obliga posar PRIMER LLETRES i després NÚMEROS 
+            /* let LettersNumbers = /[A-Za-z+0-9]+$/; PROVA */
+            /* let LettersNumbers = /^[A-Za-z0-9]+$/; PROVA */
+
+            let NoError= true // Per Acceptar Enviar
+            
+            if(nombre.length==0){ // NOM OBLIGATORI --------------
+                nombreError.innerHTML = "Has de posar el nom!"
+                NoError = false
+            }else if (!(onlyLetters.test(nombre))){ 
+                nombreError.innerHTML = "Aquest camp només permet lletres."
+                NoError = false // No envia Formulari
+            }else{
+                nombreError.innerHTML =""
+            }
+
+            if(edad.length==0){  // EDAT OBLIGATORI --------------
+                edadError.innerHTML = "Has de posar l'edat!"
+                NoError=false
+            }else if (!(onlyNumbers.test(edad))){ 
+                edadError.innerHTML = "Aquest camp només permet números."
+                NoError = false
+            } else{
+                edadError.innerHTML = ""
+            }   
+
+            if(email.length==0){  // EMAIL OBLIGATORI --------------
+                emailError.innerHTML = "Has de posar el correu electrònic!"
+                NoError=false
+            }else if (!(arrobaRequired.test(email))){ 
+                emailError.innerHTML = "Aquest correu electrònic és incorrecte."
+                NoError = false
+            } else{
+                emailError.innerHTML = ""
+            }  
+
+            if(contrasena.length==0){ // CONTRASENYA OBLIGATORI --------------
+                contrasenaError.innerHTML = "Has de posar una contrasenya!"
+                NoError = false
+            }else if (!(LettersNumbers.test(contrasena))){ 
+                contrasenaError.innerHTML = "Aquest camp ha de tenir lletres i números!" // Sempre surt Avís! amb lletres i números també!!!?
+                NoError = false
+            }else{
+                contrasenaError.innerHTML ="Contrasenya Correcta!!!!"
+            }
+            console.log("contrasena: ", contrasena);
+            console.log("LettersNumbers: ", LettersNumbers);
+            console.log("resultat Contraseña:", LettersNumbers.test(contrasena));
+        // console.log("resultat Nom:", onlyLetters.test(nombre));
+        
+            return NoError //Si no hi ha cap Error ENVIAR el formulari. (NoError=true)          
+        }
+    </script>
+</html>
