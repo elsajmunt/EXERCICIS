@@ -1,37 +1,43 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulari amb CSS i JS. Prova Guardar al GidUp</title>
+</head>
     <body>
         <form onsubmit="return validarFormulario()"> <!-- true: envia, false: no envia -->
             <input type="text" name="nombre" id="nombre_id" placeholder="introducir nombre"><br> <!-- name: Surt valor a la url de resposta -->
-            <span id="nombreError_id" style="font-size: small; color: #f00;"></span>
+            <span id="nombreError_id" style="font-size: small; color: rgb(3, 139, 110);"></span>
             <br>
-            <input type="text" name="edad" id="edad" placeholder="introducir edad"><br>
-            <span id="edadError_id" style="font-size: small; color: #f00;"></span>
+
+            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Selecciona fecha"><br> 
+            <span id="fechaError_id" style="font-size: small; color: rgb(241, 119, 4);"></span>
             <br>
-            <input type="text" name="correoelectronico" id="email" placeholder="introducir Email"><br>
-            <span id="emailError_id" style="font-size: small; color: #f00;"></span>
+
+            <textarea name="descripcio" id="descripcio" rows="4" cols="50"></textarea>
+            
+            <span id="nombreError_id" style="font-size: small; color: rgb(241, 119, 4);"></span>
             <br>
+
             <input type="submit" value="Send">
         </form>
     </body>
     <script>
         function validarFormulario(){         
             
+            // VARIABLES NOM:
             let nombre = document.getElementById("nombre_id").value.trim()
-            console.log(nombre)
             let onlyLetters = /^[A-Za-z]+$/;
-            let onlyNumbers = /^[0-9]+$/;
             let nombreError = document.getElementById("nombreError_id") //accedo al elemento span nombreError_id.
+
+            // VARIABLES DESCRIPCIÓ:
+            let descripcio = document.getElementById("descripcio").value.trim()
+           
+        //  let onlyNumbers = /^[0-9]+$/; No cal!
+            
             let NoError= true // Per Acceptar Enviar
 
-            let edad = document.getElementById("edad").value.trim()           
-            let edadError = document.getElementById("edadError_id") //accedo al elemento span edadError_id.
-
-            let email = document.getElementById("email").value.trim()           
-            let emailError = document.getElementById("emailError_id") //accedo al elemento span emailError_id. 
-            let arrobaRequired = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            console.log(nombre)
             
             if(nombre.length==0){ // NOM OBLIGATORI --------------
                 nombreError.innerHTML = "El campo nombre es obligatorio"
@@ -42,28 +48,11 @@
             }else{
                 nombreError.innerHTML =""
             }
+                
+// PENDENT FER els if i CONDICIONS PER LA DESCRIPCIÓ .......
 
-            if(edad.length==0){  // EDAT OBLIGATORI --------------
-                edadError.innerHTML = "El campo edad es obligatorio"
-                NoError=false
-            }else if (!(onlyNumbers.test(edad))){ // formato
-                edadError.innerHTML = "El campo solo permite numeros"
-                NoError = false
-            } else{
-                edadError.innerHTML = ""
-            }   
-
-            if(email.length==0){  // EMAIL OBLIGATORI --------------
-                emailError.innerHTML = "El campo email es obligatorio"
-                NoError=false
-            }else if (!(arrobaRequired.test(email))){ // formato
-                emailError.innerHTML = "El campo debe añadir un email"
-                NoError = false
-            } else{
-                emailError.innerHTML = ""
-            }  
-        
-            return NoError //Si no hay ningun error enviar el formulario. (NoError=true)          
+            return NoError //Si no hay ningun error enviar el formulario. (NoError=true)     
+                 
         }
 
     /*
