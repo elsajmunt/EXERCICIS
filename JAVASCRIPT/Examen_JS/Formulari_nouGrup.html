@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 	<head>
 		<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
 		<meta charset="UTF-8">
@@ -13,17 +12,14 @@
 				/* Recoloca bé el Formulari */
 				display: block;
 			}
-
 			span {
 				/* Text Avís Camps obligatoris... */
 				color: red;
 			}
 		</style>
 	</head>
-
 	<body>
 		<h2>Afegeix un nou grup</h2>
-
 		<form id="elForm" name="miForm">
 
 			<label><strong>Nom del grup:</strong></label> <!-- NOM del Grup ------------------------>
@@ -35,7 +31,7 @@
 			<span id="avis_descripcio"></span><br>
 
 			<label><strong>Imatge:</strong></label>
-			<input type="url" id="imatge" placeholder="Introdueix la URL d'una imatge" accept="image/*"> <!-- IMATGE -<<<----------------------->
+			<input type="url" id="imatge" placeholder="Introdueix la URL d'una imatge" accept="image/*"> <!-- IMATGE ---------------------->
 			<span id="avis_imatge"></span><br>
 
 			<label><strong>Etiquetes:</strong></label> <!-- ETIQUETES ------------------------>
@@ -64,11 +60,17 @@
 				let avisDescripcio = document.getElementById("avis_descripcio");
 
 				const censoredWords = ["word1", "word2", "word3"]; // paraules 'malsonants' 
-				let detectaCensoredWords = censoredWords.forEach(detectorCensoredWords); // Detectar les paraules 'malsonants'..
-			// document.getElementById("descripcio").innerHTML = avis_descripcio;
-				function detectorCensoredWords(item, index) {
-				avis_descripcio += index + ": " + item + "<br>"; 
-				}
+
+				let detectaCensoredWords = function detectorCensoredWords() {  // Funció C
+					censoredWords.forEach( censoredWord => {      // Recorre las palabras censuradas
+						if (descripcio.includes(censoredWord))   // Pregunta si hay alguna palabra censurada dentro del texto
+						{
+						return true; // retorna que se ha encontrado alguna palabra censurada (C)
+						// censoredWord = true; // retorna que se ha encontrado alguna palabra censurada (J) Prova
+						// avisDescripcio = true; (I) Prova
+						}
+					});
+				} 
 
 				let imatge = document.getElementById("imatge").value.trim(); // IMATGE // -------------
 				avisImatge = document.getElementById("avis_imatge");
@@ -78,7 +80,7 @@
 
 				// CONDICIONS VALIDACIONS: ------------------------------------------------------------------------------------
 
-				if (nom.length == 0) { // NOM  // -------------------------------------	
+				if (nom  == "") { // NOM  // -------------------------------------	
 					avisNom.innerHTML = "Has d'introduir el Nom del Grup!"
 					resultat = false
 				}
@@ -86,21 +88,19 @@
 					avisNom.innerHTML = "";
 				}
 
-				if (descripcio.length == 0) { // DESCRIPCIÓ // --------------------------------	
+				if (descripcio == "") { // DESCRIPCIÓ // --------------------------------	
 					avisDescripcio.innerHTML = "Has d'introduir una Descripció!"
 					resultat = false
-				}
-
-				else if (descripcio === censoredWords) { // Si a la Descripció introdueixen paraules 'malsonants' <<<<<
-					detectaCensoredWords;
-					//detectorCensoredWords  // Crida a la Funció Detector de paraules 'malsonants'
-					avisDescripcio.innerHTML = "Ep! Aquestes paraulotes no estan permeses!!!" // i Avisa!
+				}	
+				else  {
+					if (detectaCensoredWords()){ // Si troba paraules malsonants
+					avisDescripcio.innerHTML = "Ep! Aquestes paraules no estan permeses!!!" //  Avisa! 
 					resultat = false
-				}				
-				
-				else {
+                 	}
+					 else {
 					avisDescripcio.innerHTML = ""; 
 				} 
+				}	
 
 				if (imatge.length == 0) { // IMATGE // ---------------------------------------	
 					avisImatge.innerHTML = "Has d'introduir una imatge!"
@@ -110,7 +110,7 @@
 					avisImatge.innerHTML = "";
 				}
 
-				if (etiqueta1.length == 0) { // ETIQUETES  // -------------------------------------	
+				if (etiqueta1 == "") { // ETIQUETES  // -------------------------------------	
 					avisEtiquetes.innerHTML = "Has d'introduir una etiqueta, com a mínim!"
 					resultat = false
 				}
@@ -126,7 +126,5 @@
 				return resultat;
 			})
 		</script>
-
 	</body>
-
 </html>
