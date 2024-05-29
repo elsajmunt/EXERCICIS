@@ -1,0 +1,7 @@
+phpMyAdmin
+Per crear i editara Bases de Dades:
+
+http://localhost/phpmyadmin/index.php?
+
+Base Dades creada (Ciutats i Persones...):
+http://localhost/phpmyadmin/index.php?route=/sql&db=ciutats&table=personas&pos=0

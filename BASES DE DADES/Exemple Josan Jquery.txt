@@ -1,0 +1,3 @@
+SELECT * FROM localitats WHERE `Codi Postal` = 08880
+
+echo "CP: ".$row[0]." Localitat: ".$row[1]."<br>";
