@@ -1,0 +1,27 @@
+/* 10. Pseudo-clases y pseudo-elementos en CSS (eniun.com) */
+
+/* ESTILS ENLLAÇOS a:link... ----------------------*/
+a:hover{ /*Elemento apuntador pasa por encima*/
+    text-decoration: overline;
+}
+a:active{ /*Se activa cuando el usuario pulsa el elemento*/
+    color: white;
+    background-color: yellow;
+}
+a:link{ /*No visitado por el usuario*/
+    color: green;
+    font-size: 20px;
+/* text-decoration: underline; */
+/* text-decoration: none; */
+}
+
+a:visited{   /* Visitado por el usuario */
+    text-decoration: underline; 
+    color: rgb(147, 173, 147);
+} 
+
+
+/* ESTILS PARÀGRAFS FIRST CHILD...--------------------*/
+p:first-child { color: red; } 
+p:last-child { color: green; } 
+p:only-child { color: blue; }

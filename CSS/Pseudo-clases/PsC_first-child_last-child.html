@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset=UTF8>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <link rel="stylesheet" href="estils.css">
+      <title>Pseudo-clases - Exercici de eniun.com</title>
+  </head>
+
+  <body>
+    <h1>Exemple Pseudo-clases: :first-child i :last-child</h1>
+    <div>
+        <p>PRIMER paràgraf (p dins un div)</p>
+        <p>Segundo párrafo</p>
+        <p>Tercer paràgraf</p>
+        <p>Més paragrafs...</p>
+        <p>Més paragrafs...</p>
+        <p>Més paragrafs...</p>
+        <p>ÚLTIM paràgraf (p dins un div)</p>
+    </div>
+    <span>
+        <p>PRIMER paràgraf (p dins un span)</p>
+        <p>Segundo párrafo</p>
+        <p>Tercer párrafo</p>
+        <p>Cuarto párrafo</p>
+        <p>ÚLTIM paràgraf (p dins un span)</p>
+    </span>
+    <div>
+        <h1>Titul h1 dins d'un div</h1> <!--h1 Anula el p:first-child -->
+        <p>Primer párrafo (el h1 Anula el p:first-child)</p>
+        <p>Segundo párrafo</p>
+        <p>Tercer párrafo</p>
+        <p>Cuarto párrafo</p>
+      <div>
+          <p>Párrafo único (anula el p:last-child de dalt )</p> <!--el p independent Anula el p:last-child de dalt-->
+      </div>
+    </div>
+  </body>
+
+</html>
