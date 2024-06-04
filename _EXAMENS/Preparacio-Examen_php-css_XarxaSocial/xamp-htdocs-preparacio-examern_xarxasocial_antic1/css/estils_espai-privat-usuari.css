@@ -1,0 +1,182 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    width: 70%;
+ /* max-width: 900px; */
+    margin: 0 auto; /* Centra sempre el bloc */
+    }
+
+/*
+header { 
+  background-color: rgb(246, 246, 243);
+  color:rgb(148, 146, 146);
+  height: 40px;
+  padding:2%;
+  border-radius:15px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  text-align:center;
+  } */
+    
+  h2 {
+    text-align:left ;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(168, 167, 166);
+    }
+
+  h3 {
+    text-align:center ;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(213, 43, 1);
+    }
+
+  #contingut {
+      padding: 15px;
+      text-align:center ;
+    }
+
+  .bold {
+    font-weight: bold ;
+    color:rgb(168, 167, 166);
+  }
+
+  img 
+  {
+    border-radius: 10px;
+    /*width:350px;*/
+  }
+
+  .publicacio {
+    background-color:rgba(252, 250, 249, 0.819);
+   /* align-items: center; */
+   text-align: center;
+  }
+
+  label {
+    display: block;
+    font-family: serif;
+    font-size: 20px; 
+    color:rgb(168, 167, 166);
+    }
+      
+  input { 
+    width:260px;
+    height: 60px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #c4c4c4;    
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+} 
+
+input[type="submit"] {
+  background-color: rgb(246, 246, 243); /* Color de fondo */
+  border: none; /* Quita el borde */
+  color: rgb(168, 167, 166); /* Color del texto */
+  padding: 10px 16px; /* Espaciado interno */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Quita la subrayado por defecto */
+  display: inline-block; /* Hace que el botón se ajuste al contenido */
+  font-size: 13px; /* Tamaño de fuente */
+  margin: 4px 2px; /* Margen exterior */
+  cursor: pointer; /* Cambia el cursor al pasar sobre él */
+  border-radius: 5px; /* Añade bordes redondeados */
+  width: 60px;
+  height: 30px;
+}
+
+/* Cambia el estilo cuando el cursor pasa sobre el botón */
+input[type="submit"]:hover {
+  background-color: rgb(213, 43, 1);
+}
+
+textarea {  /* Comentaris text Formu. Dona Error!  */
+  width:320px;
+  height: 80px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #c4c4c4;    
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+} 
+
+
+  button {  /*  */
+      margin-top: 2px;
+      width: 90px;
+      height: 30px;
+      background-color:rgb(213, 43, 1);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+  }
+
+  
+  a:link, a:visited {  
+    color:rgb(213, 43, 1);
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 8px;
+    font-weight: bold;
+  } 
+  
+  a:hover, a:active { 
+    color:rgb(148, 146, 146);
+    text-decoration: underline;
+  }
+
+  hr {
+    border-top: 2px solid rgb(214, 214, 209);
+    margin-top: 35px;
+  
+  }
+
+  footer {
+    background-color: rgb(246, 246, 243);
+    color:rgb(148, 146, 146);
+    height: 33px;
+    padding:1px;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: 45px;
+    /*text-align:center;*/
+    }
+
+
+    /* ESTILS per Pàgina Privada Usuari ------------------------------------------------------------ */ 
+
+    #header-usuari { /* HEADER Pàgina Usuari --------- */
+      background-color: rgb(246, 246, 243);
+      color:rgb(148, 146, 146);
+      height: 20px;
+      padding:2%;
+      border-radius:15px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      text-align:left;
+      display: flex; /* afegit */
+      justify-content: space-between;
+      align-items: center;
+      } 
+      
+      .logo img { /* LOGO HEADER Paàgina Usuari */
+        height: 100px; /* Ajustar el tamaño segons el logo */
+      }
+      
+      .boton button {   /* BOTÓ HEADER Tanca Sesió... */
+        padding: 10px 10px;
+        font-size: 14px;
+        background-color:rgb(152, 152, 151);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 170px;
+        height: 38px;
+      }
+      
+      .boton button:hover {
+        background-color:rgb(213, 43, 1);
+      }
+

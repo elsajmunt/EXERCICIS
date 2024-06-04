@@ -1,0 +1,138 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    width: 70%;
+ /* max-width: 900px; */
+    margin: 0 auto; /* Centra sempre el bloc */
+    }
+
+  /* ESTILS per Pàgina Index.html Formu Inici Sesió ------------------------------------------------ */ 
+
+header { /* HEADER Formulari Inici Sesió */
+  background-color: rgb(246, 246, 243);
+  color:rgb(148, 146, 146);
+  height: 40px;
+  padding:2%;
+  border-radius:15px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  text-align:center;
+  }
+    
+  h1 {
+    text-align:center ;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(213, 43, 1);
+    }
+
+  #contingut {
+      padding: 15px;
+      text-align:center ;
+    }
+
+  label {
+    display: block;
+    font-family: serif;
+    font-size: 20px; 
+    color:rgb(168, 167, 166);
+    }
+      
+  input { 
+    width:300px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #c4c4c4;    
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+  .checkbox { 
+    width: 17px;
+    height: 17px;
+    color:rgb(168, 167, 166);
+    margin-top: 10px;
+}
+
+button {  /* BOTÓ SIGN IN Index.html */
+  margin-top: 15px;
+  width: 240px;
+  height: 50px;
+  background-color:rgb(213, 43, 1);
+  border: 1px solid #f8c7c3;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+}
+
+  a:link, a:visited {  /* BOTÓ REGISTRA'T Index.html */
+    background-color:rgb(152, 152, 151);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 8px;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(109, 109, 108);
+  }
+
+  hr {
+    border-top: 1px solid rgb(214, 214, 209);
+    margin-top: 35px;
+    width: 550px;
+  }
+
+  footer {
+    background-color: rgb(246, 246, 243);
+    color:rgb(148, 146, 146);
+    height: 33px;
+    padding:1px;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: 45px;
+    /*text-align:center;*/
+    }
+
+
+    /* ESTILS per Pàgina Privada Usuari -----BORRAR si faig en pàgina d'estils a part---------------- */ 
+
+    #header-usuari { /* HEADER Pàgina Usuari --------- */
+      background-color: rgb(246, 246, 243);
+      color:rgb(148, 146, 146);
+      height: 20px;
+      padding:2%;
+      border-radius:15px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      text-align:left;
+      display: flex; /* afegit */
+      justify-content: space-between;
+      align-items: center;
+      } 
+      
+      .logo img { /* LOGO HEADER Paàgina Usuari */
+        height: 100px; /* Ajustar el tamaño segons el logo */
+      }
+      
+      .boton button {   /* BOTÓ HEADER Tanca Sesió */
+        padding: 10px 10px;
+        font-size: 14px;
+        background-color:rgb(213, 43, 1);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 120px;
+        height: 28px;
+      }
+      
+      .boton button:hover {
+        background-color: rgb(192, 4, 4);
+      }
+

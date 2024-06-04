@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+		<meta charset="UTF-8">
+		<meta name="description" content="Formulario">
+		<title>Formulari: NOU GRUP Xarxa Social. Examen JS</title>
+		<style>
+			label:not(.inline),
+			input:not(.inline),
+			textarea {
+				/* Recoloca bé el Formulari */
+				display: block;
+			}
+			span {
+				/* Text Avís Camps obligatoris... */
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Afegeix un nou grup</h2>
+		<form id="elForm" name="miForm">
+
+			<label><strong>Nom del grup:</strong></label> <!-- NOM del Grup ------------------------>
+			<input type="text" id="nom" name="nom" placeholder="Escriu el non del Nou Grup"> 
+			<span id="avis_nom"></span><br>
+
+			<label><strong>Descripció:</strong></label> <!-- DESCRIPCIÓ ------------------------>
+			<textarea id="descripcio" name="descripcio" rows="10" cols="50" placeholder="Escriu una breu descripció..."></textarea>
+			<span id="avis_descripcio"></span><br>
+
+			<label><strong>Imatge:</strong></label>
+			<input type="url" id="imatge" placeholder="Introdueix la URL d'una imatge" accept="image/*"> <!-- IMATGE ---------------------->
+			<span id="avis_imatge"></span><br>
+
+			<label><strong>Etiquetes:</strong></label> <!-- ETIQUETES ------------------------>
+			<input type="text" id="etiqueta_1" name="etiqueta_1" placeholder="Escriu una etiqueta"> 
+			<input type="text" id="etiqueta_2" name="etiqueta_2" placeholder="Escriu una etiqueta"> 
+			<input type="text" id="etiqueta_3" name="etiqueta_3" placeholder="Escriu una etiqueta"> 
+			<span id="avis_etiquetes"></span><br>
+
+
+			<input type="submit" name="envio" value="Enviar >>">
+		</form>
+
+		<script> // JS
+			let elFormulari = document.getElementById("elForm");
+			elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. Noms elements PREDETERMINATS. Salta al clicar Submit
+				event.preventDefault();
+
+				// VARIABLES: ------------------------------------------------------------------------------------------------
+
+				let resultat = true;  // true ACCEPTA QUE D'ENTRADA TOT ESTÀ BÉ o ÉS VALID //
+
+				let nom = document.getElementById("nom").value.trim(); // NOM // ---------------
+				let avisNom = document.getElementById("avis_nom");
+
+				let descripcio = document.getElementById("descripcio").value.trim(); // DESCRIPCIÓ // -------------
+				let avisDescripcio = document.getElementById("avis_descripcio");
+
+				const censoredWords = ["word1", "word2", "word3"]; // paraules 'malsonants' 
+
+				let detectaCensoredWords = function detectorCensoredWords() {  // Funció C
+					censoredWords.forEach( censoredWord => {      // Recorre las palabras censuradas
+						if (descripcio.includes(censoredWord))   // Pregunta si hay alguna palabra censurada dentro del texto
+						{
+						return true; // retorna que se ha encontrado alguna palabra censurada (C)
+						// censoredWord = true; // retorna que se ha encontrado alguna palabra censurada (J) Prova
+						// avisDescripcio = true; (I) Prova
+						}
+					});
+				} 
+
+				let imatge = document.getElementById("imatge").value.trim(); // IMATGE // -------------
+				avisImatge = document.getElementById("avis_imatge");
+
+				let etiqueta1 = document.getElementById("etiqueta_1").value.trim(); // ETIQUETES // -------------
+				let avisEtiquetes = document.getElementById("avis_etiquetes");
+
+				// CONDICIONS VALIDACIONS: ------------------------------------------------------------------------------------
+
+				if (nom  == "") { // NOM  // -------------------------------------	
+					avisNom.innerHTML = "Has d'introduir el Nom del Grup!"
+					resultat = false
+				}
+				else {
+					avisNom.innerHTML = "";
+				}
+
+				if (descripcio == "") { // DESCRIPCIÓ // --------------------------------	
+					avisDescripcio.innerHTML = "Has d'introduir una Descripció!"
+					resultat = false
+				}	
+				else  {
+					if (detectaCensoredWords()){ // Si troba paraules malsonants
+					avisDescripcio.innerHTML = "Ep! Aquestes paraules no estan permeses!!!" //  Avisa! 
+					resultat = false
+                 	}
+					 else {
+					avisDescripcio.innerHTML = ""; 
+				} 
+				}	
+
+				if (imatge.length == 0) { // IMATGE // ---------------------------------------	
+					avisImatge.innerHTML = "Has d'introduir una imatge!"
+					resultat = false
+				}
+				else {
+					avisImatge.innerHTML = "";
+				}
+
+				if (etiqueta1 == "") { // ETIQUETES  // -------------------------------------	
+					avisEtiquetes.innerHTML = "Has d'introduir una etiqueta, com a mínim!"
+					resultat = false
+				}
+				else {
+					avisEtiquetes.innerHTML = "";
+				}
+
+				if(resultat) {
+					// ENVIO A ON TOQUI
+					// REDIRIGUEIXO A ON TOQUI
+					window.location = "./pagina_usuari.html"
+				}
+				return resultat;
+			})
+		</script>
+	</body>
+</html>

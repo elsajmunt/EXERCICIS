@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validarFormulario(){   
+                // PRE : TOT ESTÀ BÉ
+                let resultat = true;
+                let elementNom = document.getElementById("nom");
+                let avisNom = document.getElementById("avis_nom");
+
+                let elementCognoms = document.getElementById("cognoms");
+                let avisCognoms = document.getElementById("avis_cogoms");
+
+                // 
+
+                let valorElemNom = elementNom.value;  // per agafar el VALOR NOM
+                let longNom = valorElemNom.length; // valor LONGITUT del Nom
+
+                let valorElemCognoms = elementCognoms.value;  // per agafar el VALOR COGNOM
+                let longCognoms = valorElementCognoms.length; // valor LONGITUT del Nom
+
+
+
+                if (longNom < 5) { 
+                    avisNom.innerHTML="MÍNIM 5 caracters";
+                    resultat = false;
+                }
+                
+                if (longCognoms<12) {
+                    avisCognoms.innerHTML="MÍNIM 12 carsters";
+                    resultat = false;
+                }
+                
+                console.log("VALIDAR FORM!!! resultat", resultat);  
+                alert("aaaaaaa");
+                return resultat;
+            }
+        </script>
+    </head>
+    <body>
+        <form method="GET" action="http://www.google.com" name="miForm" onsubmit="return validarFormulario()">
+            <input type="text" id="nom" name="nom" value="Nom"> <span id="avis_nom"></span><br>
+            <input type="text" id="cognoms" name="cognoms" value="Cognoms"><BR>
+            <input type="text" id="edat" name="edat"><BR>
+            <input type="submit" name="envio" ><BR>
+        </form>
+    </body>
+</html>

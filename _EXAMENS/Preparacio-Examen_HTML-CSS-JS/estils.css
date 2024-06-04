@@ -1,0 +1,84 @@
+/* ESTILS PER GENERALS **************************************************** */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.textbase {
+    font-size: 15px;
+}
+
+h2 {
+    font-size: 30px; color: orangered;
+}
+
+/* ESTILS PER FORMULARI **************************************************** */
+
+/* Elements Formulari ben colocats en block 
+label:not(.inline),
+input:not(.inline),
+textarea {
+    display: block;
+}  */
+
+label {
+    font-size: 18px;;
+}
+
+.radio-checkbox {width: 6%;} /* input type radio iCheckbox que no baixin... */
+
+form {max-width: 500px; margin: 0 auto;}
+
+input {
+   -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  /*  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+ }
+
+/* Estilos para el input cuando está en estado :focus */
+input:focus {
+    background-color: #f0f0f0;
+    border-color: #007bff; /* Cambio de color del borde */
+    outline: none; /* Eliminar contorno predeterminado */
+}
+
+.asterisc_required { /* Asterisc sol de Required */
+    content: "*";
+    color: red;
+    margin-left: 5px;
+    display: inline;
+  }
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+  }
+
+ textarea {
+    width: 94%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* TEXT AVÍS Camps obligatoris Formulari... */
+span {  
+    color: red;  font-size: 13px; display: block; /* block perquè faci Return */
+}
+

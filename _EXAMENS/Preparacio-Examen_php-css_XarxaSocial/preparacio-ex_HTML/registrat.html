@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=UTF8>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="estils.css">
+    <title>Xarxa Social: Registra't</title>
+</head>
+
+<body>
+    <div><!-- Contenidor Principal -->
+        <header><!-- HEADER -->
+            <a href="index.html">LOGO </a>
+        </header>
+        <h1>Registra't</h1>
+        <h2>Omple el formulari, si encara no ets usuari:</h2>
+
+        <div><!-- FORMULARI DE REGISTRE -->
+            <form onsubmit="return validarFormulario()" method="POST" action="registre.php"> <!-- true: envia, false: no envia -->
+                <p>
+                    <label>Nom</label> <!-- NOM --->
+                    <input type="text" name="Nom" id="name_id" placeholder="Introdueix el teu Nom">         
+                </p>
+
+                <p>
+                    <label>Cognoms</label> <!-- NOM --->
+                    <input type="text" name="Cognoms" id="cognoms_id" placeholder="Introdueix els teus Cognoms">         
+                </p>
+
+                <p>
+                    <label>Edat</label> <!-- EDAT --->
+                    <input type="number" name="Edat" id="edat_id" placeholder="Introdueix la teva edat">          
+                </p>
+
+                <p>
+                    <label>Email</label> <!-- EMAIL --->
+                    <input type="email" name="Email" id="email_id" placeholder="Introdueix el teu e-mail">           
+                </p>
+
+                <p>
+                    <label>Escull una Contrasenya</label> <!-- CONTRASENYA --->
+                    <input type="password" name="password" id="userpassword_id" placeholder="Introdueix la contrasenya"/>
+
+                    <input type="checkbox" id="recordar" name="Recordar">
+                    <label for="recordar"> Recordar contrasenya</label><br>
+                </p>
+                    <input type="submit" value="Registra't >" href="">
+            </form>
+        </div>
+
+        <footer> <!-- FOOTER -->
+            <p>Footer: Informació Legal...</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

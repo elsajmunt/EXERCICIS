@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=UTF8>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="estils.css">
+    <title>Xarxa Social: Inici</title>
+</head>
+
+<body>
+    <div><!-- Contenidor Principal -->
+        <header><!-- HEADER -->
+        LOGO (Home page)
+        </header>
+
+        <h1>Inici de Sesió</h1>
+
+        <div><!-- FORMULARI INICI SESIÓ -->
+            <form onsubmit="return validarFormulario()"> <!-- true: envia, false: no envia -->
+                <p>
+                <label>Nom d'Usuari</label> <!-- NOM USUARI --->
+                <input type="text" name="Nom" id="username_id" placeholder="Introdueix el teu Nom"><br>           
+                </p>
+
+                <p>
+                <label>Contrasenya</label> <!-- CONTRASENYA --->
+                <input type="password" name="password" id="userpassword_id" placeholder="Introdueix la contrasenya"/>
+
+                <input type="checkbox" id="recordar" name="Recordar">
+                <label for="recordar"> Recordar contrasenya</label><br>
+                </p>
+                <input type="submit" value="Inicia Sesió >">
+            </form>
+        </div>
+        <div> <!-- REGISTRA'T -->
+            <p>Encara no ets usuari?</p>
+            <a href="registrat.html">Registra't >> </a> 
+        </div>
+
+        <footer><!-- FOOTER -->
+            <p>Footer: Informació Legal...</p>
+          </footer>
+    </div>
+</body>
+
+</html>

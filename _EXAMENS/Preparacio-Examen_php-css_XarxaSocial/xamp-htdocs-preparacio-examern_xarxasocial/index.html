@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=UTF8>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="css/estils.css">
+    <title>Xarxa Social: Inicii Sesió o Registre</title>
+</head>
+
+<body> <!-- Falta posar PHP... -->
+
+    <header><!-- HEADER -->
+    <img src="imatges/logo.jpg" alt="Logo" width="120" height="88">
+    </header>
+
+    <div id="contingut"> <!-- CONTINGUT PRINCIPAL -->
+        <h1>Hola de nou!</h1>
+
+        <div id="formulari"><!-- FORMULARI INICI SESIÓ -->    
+            <form action="inici_usuari.php" method="POST"> <!-- Va a la pàgina privada amb Publicacions -->   
+                <p>
+                <label>Nom d'Usuari</label> <!-- NOM USUARI --->
+                <input type="text" name="nomusuari" id="nomusuari" placeholder="Introdueix el teu Nom"><br><!-- Respectar name="nomusuari" -->           
+                </p>
+
+                <p>
+                <label>Contrasenya</label> <!-- CONTRASENYA --->
+                <input type="password" name="password" id="password" placeholder="Introdueix la contrasenya"/><br><!-- Respectar name="password" -->   
+                
+                <input class="checkbox" type="checkbox" >
+                <span class="checkbox"> Recordar contrasenya</span><br>
+
+                </p>
+            <!--<input type="submit" name="enviar" value="Inicia Sesió >"> -->
+                <button type="submit" name="enviar">Inicia Sesió </button>              
+            </form>
+        <hr>
+        </div>
+        <div> <!-- REGISTRA'T -->
+            <h1>Encara no ets usuari?</h1>
+            <a href="formulari_Registrat.html">Registra't </a> 
+        </div>
+        
+    </div> 
+
+    <footer> <!-- FOOTER -->
+        <p>Copyright 2024 Informació Legal Política de Privacitat</p>
+    </footer>
+</body>
+
+</html>
