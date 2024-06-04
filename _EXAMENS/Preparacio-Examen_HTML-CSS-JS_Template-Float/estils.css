@@ -1,0 +1,92 @@
+/* ESTILS TEMPLATE FLOAT ******************************* */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:rgb(97, 96, 96);
+}
+
+/* HEADER */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: left;
+  font-size: 22px;
+  height: 100px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+/* BARRA DE NAVEGACIÓ ***************************************************** */
+
+nav{
+    max-width: 1024px;
+    margin: 0 auto;
+ }
+ img{
+     padding: 5px 5px;
+ }
+ nav ul{
+     /*float: right; */
+     list-style: none;
+     text-align: center;
+     vertical-align: top;
+     /*clear: both;*/
+ }
+ nav li{
+     list-style-type: none;
+     padding: 0px;
+     display: inline;
+ }
+ nav li a{
+     color: rgb(9, 9, 9);
+     font-size: 1em;
+     text-decoration: none;
+    /* line-height: 70px;*/
+     padding: 15px 10px;
+ }
+ nav li a:hover{
+      color: #fa2702;
+ }
+ 
+ /* ESTILS BÀSICS */ 
+
+ .contenidor { width: 100%;} /* Prova, no funciona */

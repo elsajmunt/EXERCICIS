@@ -1,17 +1,72 @@
-/* ESTILS PER GENERALS **************************************************** */
-body {
+/* ESTILS GENERALS **************************************************** */
+*{
+    margin: 0px;
+    padding: 0px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.textbase {
-    font-size: 14px;
+body { padding-top: 10px; }
+
+.contingut {max-width: 500px; margin: 0 auto;}
+
+.textbase { font-size: 14px; }
+
+h1 {
+    font-size: 26px; color: orangered;
 }
 
 h2 {
-    font-size: 30px; color: orangered;
+    font-size: 24px; color: orangered; margin-top: 10px; margin-bottom: 5px;
 }
 
-/* ESTILS PER FORMULARI **************************************************** */
+hr {
+    border-top: 1px solid rgb(214, 214, 209);
+    margin-top: 25px;
+    width: 500px;
+  }
+
+
+/* BARRA DE NAVEGACIÓ ***************************************************** */
+
+header{
+   top: 0px;   
+   /*  position: fixed; */
+    width: 100%;
+    height: 70px;  
+    background-color: #F7F9FA;
+   /* z-index: 1; */
+}
+nav{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+header img{
+    padding: 18px 10px;
+}
+nav ul{
+    float: right;
+    list-style: none;
+    text-align: center;
+    vertical-align: top;
+}
+nav li{
+    list-style-type: none;
+    padding: 0px;
+    display: inline;
+}
+nav li a{
+    color: black;
+    font-size: 1em;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 15px 10px;
+}
+nav li a:hover{
+     color: #5E5D6E;
+}
+
+
+/* FORMULARI **************************************************** */
 
 /* Elements Formulari ben colocats en block  (Provar ?)
 label:not(.inline),
@@ -82,9 +137,35 @@ span {
     color: orangered;  font-size: 12px; display: block; /* block perquè faci Return */
 }
 
-.boto_submit {  
+/*
+.boto {  
     background-color: orangered;  
     color: white; 
     font-size: 17px; 
     margin-top: 25px;
-}
+    width: 260px;
+}  */
+
+/* BOTONS */
+
+.boto {
+    padding: 10px 20px;
+    background-color: orangered;
+    color: white;
+    font-size: 17px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    text-decoration: none;
+    width: 300px;
+    margin-top: 25px;
+  }
+  
+  .boto:hover {
+    background-color: rgb(233, 43, 14);
+  }
+  
+  .boto:active {
+    background-color: #3e8e41;
+  }
+  

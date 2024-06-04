@@ -1,194 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+		<meta charset="UTF-8">
+		<meta name="Registre" content="Formulari">
+		<link rel="stylesheet" href="estils.css">
+		<title>Pàgina Inici</title>
+	</head>
+	<body>
+		<header> 
+			<nav>
+			<a href="index.html"><img src="imatges/logo.jpg" alt="Logo" width="90" height="55"></a>
+			<ul>
+				<li><a href="index.html">Inici</a></li>
+				<li><a href="#">Serveis</a></li>
+				<li><a href="#">Contacte</a></li>
+			</ul>
+			</nav>
+		</header>
+		<form id="elForm" name="miForm"> <!-- FORMULARI INICI SESIÓ ------------------------>
+			<h2>Inicia Sesió</h2>
+			<label for="lnombre" class="required">Nombre:</label> <!-- NOM ---->
+				<input type="text" id="nom" name="nom" placeholder="Introduce el Nombre"> 
+				<span id="avis_nom"></span>		
 
-<head>
-	<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
-	<meta charset="UTF-8">
-	<meta name="description" content="Formulario">
-	<link rel="stylesheet" href="estils.css">
-	<title>Registra't</title>
-</head>
+			<label for="email" class="required">Email:</label> <!-- EMAIL ----->
+			<input type="email" id="email" name="email" placeholder="Introduce tu email">
 
-<body>
-	<form id="elForm" name="miForm">
-		<h2>Registra't</h2>
+			<input type="submit" class="boto" name="envio" value="Enviar">
+		</form>
+		
+		<div class="contingut"> <!-- NOU USUARI ------------------------>
+			<hr>
+			<h2>Nou usuari?</h2><br>
+			<a href="formulari_registre.html" class="boto">Registra't</a>
+		</div>
 
-		<label for="lnombre" class="required">Nombre:</label> <!-- NOM ------------------------>
-			<!--<input id="lnombre" type="text" name="nombre" maxlength="50" size="50"> Original -->
-			<input type="text" id="nom" name="nom" placeholder="Introduce el Nombre"> 
-			<span id="avis_nom"></span>		
+		<script> // JS
+			let elFormulari = document.getElementById("elForm");
+			elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. Noms elements PREDETERMINATS. Salta al clicar Submit
+				event.preventDefault();
 
-		<label for="lapellido1" class="required">Primer apellido: </label> <!-- 1r COGNOM ------------------------>
-			<input type="text" id="cognom1" name="cognom1" placeholder="Introduce el 1r Apellido"> 
-			<span id="avis_cognom1"></span>
+				// VARIABLES: ///////
+				let resultat = true;  // true ACCEPTA QUE D'ENTRADA TOT ESTÀ BÉ o ÉS VALID //
+				let nom = document.getElementById("nom").value.trim(); // NOM // ---------
+				let avisNom = document.getElementById("avis_nom");
 
-		<label for="edat" class="required">Edad:</label><!-- EDAT ------------------------>
-			<input type="number" id="edat" name="edat" placeholder="Introduce tu edat"> 
-			<span id="avis_edat"></span>
+				// CONDICIONS VALIDACIONS: ////////
+				if (nom.length == 0) { // NOM Obligatori // -------------------	
+					avisNom.innerHTML = "El campo NOMBRE es obligatorio"
+					resultat = false
+				}
+				else {
+					avisNom.innerHTML = "";
+				}
 
-		<label for="email" class="required">Email:</label>
-		<input type="email" id="email" name="email">
+				if(resultat) {
+					// ENVIO A ON TOQUI
+					// REDIRIGUEIXO A ON TOQUI
+					window.location = "./pagina_usuari.html"
+				}
 
-		<label for="telefon" class="required">Teléfono:</label> <!-- TELÈFON ------------------------>
-			<input type="text" id="telefon" name="telefon" placeholder="Introduce tu teléfono"> 
-			<span id="avis_telefon"></span>
-
-		<label class="required">Género:</label><br> <!-- GÈNERE ------------------------>
-
-			<input type="radio" id="home" name="genere" class="radio-checkbox"> <!-- Home --->
-			<label for="home" class="textbase">Hombre</label><br>
-
-			<input type="radio" id="dona" name="genere" class="radio-checkbox"> <!-- Dona --->
-			<label for="dona" class="textbase">Mujer</label><br>
-
-			<span id="avis_genere"></span>
-
-		<label for="poblacio" class="required">Población: </label> <!-- POBLACIÓ ------------------------>
-		<select id="poblacio" name="poblacio">
-			<option value="">Escoge Población</option>
-			<option value="Alicante">Alicante</option>
-			<option value="Madrid">Madrid</option>
-			<option value="Sevilla">Sevilla</option>
-			<option value="Valencia">Valencia</option>
-		</select> <br>
-		<span id="avis_poblacio"></span>
-
-		<label>Comentarios:</label> <!-- COMENTARIS ------------------------>
-		<textarea name="comentarios" rows="10" cols="50">Tus comentarios aquí...
-		</textarea>
-
-		<input id="lpublicidad" type="checkbox" name="publicidad" class="radio-checkbox"> <!-- DESITJO REBRE INFO ------------------------>
-		<label for="lpublicidad" class="textbase">Deseo recibir información sobre novedades y ofertas.</label><br>
-
-		<input id="declaro" type="checkbox" name="declaro" value checked class="radio-checkbox"> <!-- DECLARO I ACCEPTO ------------------->
-		<label for="declaro" class="textbase">Declaro haber leido y aceptar las condiciones generales del
-			programa y la normativa sobre protección de datos. </label><span class="asterisc_required">*</span><br>
-		<span id="avis_declaro"></span>
-
-		<input type="submit" class="boto_submit" name="envio" value="Enviar">
-	</form>
-
-	<script> // JS
-		let elFormulari = document.getElementById("elForm");
-		elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. Noms elements PREDETERMINATS. Salta al clicar Submit
-			event.preventDefault();
-
-			// VARIABLES: ///////////////////////////////////////////////////////////////
-
-			let resultat = true;  // true ACCEPTA QUE D'ENTRADA TOT ESTÀ BÉ o ÉS VALID //
-
-			let nom = document.getElementById("nom").value.trim(); // NOM // ---------
-			let avisNom = document.getElementById("avis_nom");
-			//	let valorNom = nom.value;  // Agafa el VALOR del NOM (que ha entrat l'usuari) No cal!
-			// let longNom = valorNom.length; // Agafa la LONGITUD del NOM. No cal!
-
-			let cognom1 = document.getElementById("cognom1").value.trim(); // COGNOM 1r // --------
-			let avisCognom1 = document.getElementById("avis_cognom1");
-
-			let edat = document.getElementById("edat"); //  EDAT // ---------------------
-			let avisEdat = document.getElementById("avis_edat");
-			let valorEdat = edat.value;  // per agafar el VALOR EDAT
-			// let maximaEdat = 65; // EDAT màxima. No cal!
-
-			let telefon = document.getElementById("telefon").value.trim(); //  TELÈFON  // ----------------- 
-			let avisTelefon = document.getElementById("avis_telefon");
-			let formatTelefon = /\d{3}-\d{3}-\d{3}/;  // Aplica FORMAT 999-999-999
-
-			let genereHome = document.getElementById("home");     // GÈNERE  // ---------------------
-			let genereDona = document.getElementById("dona");
-			let avisGenere = document.getElementById("avis_genere");
-
-			let poblacio = document.getElementById("poblacio");   // POBLACIÓ // ----------------------
-			let avisPoblacio = document.getElementById("avis_poblacio");
-
-			let declaro = document.getElementById("declaro");   // DECLARO i ACCEPTO // ----------------------
-			let avisDeclaro = document.getElementById("avis_declaro");
-
-			// CONDICIONS VALIDACIONS: ///////////////////////////////////////////////////////////////
-
-			//	if(valorNom==0){ // No cal!
-			if (nom.length == 0) { // NOM Obligatori // -------------------	
-				avisNom.innerHTML = "El campo NOMBRE es obligatorio"
-				resultat = false
-			}
-			else {
-				avisNom.innerHTML = "";
-			}
-
-			if (cognom1.length == 0) { // 1r COGNOM Obligatori // --------------	
-				avisCognom1.innerHTML = "El campo APELLIDO es obligatorio"
-				resultat = false
-			}
-			else {
-				avisCognom1.innerHTML = "";
-			}
-
-			if (valorEdat == 0) { // EDAT // -----------------------------
-				avisEdat.innerHTML = "El camp EDAT és obligatori";
-				resultat = false;
-			}
-			else if (valorEdat < 18) {  // Edat més petit que... 
-				avisEdat.innerHTML = "Ho sentim, encara ets menos d'edat.";
-				resultat = false;
-			}
-			else if (valorEdat >= 18 && valorEdat <= 65) {  // Edat mínim-màxim ACCEPTADA
-				avisEdat.innerHTML = "Edat Válida! Todavía estás trabajando o en el paro. Puedes Entrar!";
-				resultat;  // resultat=true, per ACCEPTAR ENVIAR!
-			}
-			else if (valorEdat > 65) {  // Edat més gran que... 
-				avisEdat.innerHTML = "Los sentimos, ya estas jubilado.";
-				resultat = false;
-			}
-			else {
-				avisEdat.innerHTML = "";
-			}
-
-			if (telefon == "") {      // TELEFON // ---------------------------- 
-				avisTelefon.innerHTML = "El camp TELÈFON és obligatori";
-				resultat = false;
-			}
-			else if (!formatTelefon.test(telefon)) { // Si el valor és diferent al Format 
-				avisTelefon.innerHTML = "Ha de ser aquest format 999-999-999";
-				resultat = false;
-			}
-			else {
-				avisTelefon.innerHTML = ""; // NO Funciona! Si poso Format correcte 999-999-999, tampoc ho accepta! <<<<
-			}
-
-			if (!genereHome.checked && !genereDona.checked) {  // GÉNERO ---
-				avisGenere.innerHTML = "Es obligatorio escoger el GÉNERO.";
-				resultat = false;
-			}
-			else {
-				avisGenere.innerHTML = "";
-			}
-
-			if (poblacio.selectedIndex == 0) {    // POBLACIÓ ---
-				avisPoblacio.innerHTML = "Es obligatorio escoger una POBLACIÓN.";
-				resultat = false;
-			}
-			else {
-				avisPoblacio.innerHTML = "";
-			}
-
-			if (!declaro.checked) {    // DECLARO I ACCEPTO --- 
-				avisDeclaro.innerHTML = "Es obligatorio Aceptar las CONDICIONES.";
-				resultat = false;
-			}
-			else {
-				avisDeclaro.innerHTML = "";
-			}
-
-			if(resultat) {
-				// ENVIO A ON TOQUI
-				// REDIRIGUEIXO A ON TOQUI
-				window.location = "./pagina_usuari.html"
-			}
-
-			return resultat;
-		})
-	</script>
-
-</body>
-
+				return resultat;
+			})
+		</script>
+	</body>
 </html>
