@@ -4,7 +4,7 @@ body {
 }
 
 .textbase {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 h2 {
@@ -13,7 +13,7 @@ h2 {
 
 /* ESTILS PER FORMULARI **************************************************** */
 
-/* Elements Formulari ben colocats en block 
+/* Elements Formulari ben colocats en block  (Provar ?)
 label:not(.inline),
 input:not(.inline),
 textarea {
@@ -21,10 +21,10 @@ textarea {
 }  */
 
 label {
-    font-size: 18px;;
+    font-size: 17px;;
 }
 
-.radio-checkbox {width: 6%;} /* input type radio iCheckbox que no baixin... */
+.radio-checkbox {width: 6%;} /* input type radio iCheckbox perquè No baixin... */
 
 form {max-width: 500px; margin: 0 auto;}
 
@@ -79,6 +79,12 @@ select {
 
 /* TEXT AVÍS Camps obligatoris Formulari... */
 span {  
-    color: red;  font-size: 13px; display: block; /* block perquè faci Return */
+    color: orangered;  font-size: 12px; display: block; /* block perquè faci Return */
 }
 
+.boto_submit {  
+    background-color: orangered;  
+    color: white; 
+    font-size: 17px; 
+    margin-top: 25px;
+}
