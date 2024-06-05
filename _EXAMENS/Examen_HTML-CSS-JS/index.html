@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="estils.css">
 		<title>Enquesta Xarxa Social</title>
 	</head>
-	<body>
+	<body>		
 		<header> 
 			<nav> <!-- BARRA NAVEGACIÓ XARXA SOCIAL ------------------------>
 			<a href="index.html"><img src="imatges/logo.jpg" alt="Logo" width="90" height="55"></a>
@@ -19,11 +19,8 @@
 			</nav>
 		</header>
 		<div class="contingut">
-			<div class=" imatge_enquesta">
-				<img src="imatges/enquesta_personatges.png" alt="Enquesta Personatges" width="70" height="70" class=" imatge_enquesta">
-			</div>	
-			<span class="titul_enquesta">Crea aquí la teva enquesta</span>
-		</div>
+		<span class="titul_enquesta">Crea aquí la teva enquesta</span>
+		
 
 		<form id="elForm" name="miForm"> <!-- FORMULARI CREAR ENQUESTA ------------------------>
 
@@ -39,59 +36,29 @@
 			<input type="text" id="opcio_2" name="opcio_2" placeholder="Escriu l'opció 2">
 			<span id="avis_opcio_2"></span>	
 
-			<input type="submit" class="boto" name="envio" value="Crear">
+			<!-- PROVA mostrar ocultar Input OPCIÓ 3:  ------------------------->
+			<button onclick="mostrarCampo()" class="boto_mes_opcions">+</button>
+			<input type="text" id="campoOculto" placeholder="Escriu l'opció 3">
+
+		<!--<input type="submit" class="boto" name="envio" value="Crear" onclick="afegirFila()"> -->
+			<button onclick="afegirFila()" class="boto"> Crear Enquesta </button>
 		</form>
 
-		<script> // JS
-			let elFormulari = document.getElementById("elForm");
-			elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. Noms elements PREDETERMINATS. Salta al clicar Submit
-				event.preventDefault();
+        <table id="taula">  <!-- MOSTRAR Valors introduits -->
+            <thead>
+                <tr>
+             <!--   <th>Nom Enquesta</th>
+                    <th>Opció 1</th>
+                    <th>Opció 2</th>     -->             
+             <!--   <th> >Acció Borrar </th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Espai per afegir les FILES -->
+            </tbody>
+        </table>
+	</div>
 
-				// VARIABLES: /////// -------------------------------------------------------------------------------
-				let resultat = true;  // true ACCEPTA QUE D'ENTRADA TOT ESTÀ BÉ o ÉS VALID //
-
-				let nomEnquesta = document.getElementById("nom_enquesta").value.trim(); // NOM ENQUESTA //---------
-				let avisNomEnquesta = document.getElementById("avis_nom_enquesta");
-
-				let opcio1 = document.getElementById("opcio_1").value.trim(); // OPCIÓ 1 //---------
-				let avisOpcio1 = document.getElementById("avis_opcio_1");
-
-				let opcio2 = document.getElementById("opcio_2").value.trim(); // OPCIÓ 2 //---------
-				let avisOpcio2 = document.getElementById("avis_opcio_2");
-
-				// CONDICIONS VALIDACIONS: //////// --------------------------------------------------------------------
-				if (nomEnquesta.length == 0) { // NOM ENQUESTA Obligatori // -------------------	
-					avisNomEnquesta.innerHTML = "El nom de l'enquesta és obligatori!"
-					resultat = false
-				}
-				else {
-					avisNomEnquesta.innerHTML = "";
-				}
-
-				if (opcio1.length == 0) { // OPCIÓ 1 Obligatori // -------------------	
-					avisOpcio1.innerHTML = "l'Opció 1 és obligatoria!"
-					resultat = false
-				}
-				else {
-					avisNomEnquesta.innerHTML = "";
-				}
-
-				if (opcio2.length == 0) { // OPCIÓ 2 Obligatori // -------------------	
-					avisOpcio2.innerHTML = "l'Opció 2 és obligatoria!"
-					resultat = false
-				}
-				else {
-					avisNomEnquesta.innerHTML = "";
-				}
-
-				// ENVIO  //////// -----------------------------------------------------------------------------
-				if(resultat) {
-					// REDIRIGUEIXO A ON TOQUI
-					window.location = "./enquesta_rebuda.html"
-				}
-
-				return resultat;
-			})
-		</script>
+		<script src="scripts.js"></script> <!-- Codi JS Extern ---->
 	</body>
 </html>

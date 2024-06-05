@@ -7,7 +7,10 @@
 
 body { padding-top: 10px; }
 
-.contingut {max-width: 500px; margin: 0 auto; padding: 22;}
+.contingut {
+    max-width: 770px; 
+    margin: 0 auto; 
+    padding: 22;}
 
 .textbase { font-size: 14px; }
 
@@ -35,10 +38,27 @@ h2 {
     border-color: rgb(19, 18, 18);
 }
 
+/* TAULA ************************** */
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 10px;
+  }
+
 
 hr {
     border-top: 1px solid rgb(214, 214, 209);
-    margin-top: 25px;
+    margin-top: 5px;
     width: 500px;
   }
 
@@ -140,7 +160,6 @@ span {
     color: orangered;  font-size: 12px; display: block; /* block perquè faci Return */
 }
 
-
 /* BOTONS */
 
 .boto {
@@ -163,4 +182,41 @@ span {
   .boto:active {
     background-color: rgb(41, 40, 40);
   }
+
+  .boto:visited {
+    background-color: rgb(117, 113, 113);
+  }
+
+
+  .boto_mes_opcions { /* BOTÓ + Més Opcions input Formulari i "x" Borrar Taula  */
+    background-color: rgb(193, 188, 188);
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    display: block;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .boto_mes_opcions:hover { 
+    background-color: orangered;
+  }
   
+  .boto_taula {
+    padding: 4px 4px;
+    background-color: orangered;
+    color: white;
+    font-size: 12px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    text-decoration: none;
+    width: 90px;
+    height: 30px;
+  }
+
+
+/*  INPUT del FORMULARI PER MOSTRA I OCULTAR: */ 
+#campoOculto {
+    display: none; /* Ocultar inicialment */
+}
