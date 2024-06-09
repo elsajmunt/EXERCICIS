@@ -16,7 +16,7 @@ elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. N
   let avisOpcio2 = document.getElementById("avis_opcio_2");
 
   // CONDICIONS VALIDACIONS: //////// --------------------------------------------------------------------
-  if (nomEnquesta.length == 0) { // NOM ENQUESTA Obligatori // -------------------	
+  if (nomEnquesta.length == "") { // NOM ENQUESTA Obligatori // -------------------	
     avisNomEnquesta.innerHTML = "El nom de l'enquesta és obligatori!"
     resultat = false
   }
@@ -24,7 +24,7 @@ elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. N
     avisNomEnquesta.innerHTML = "";
   }
 
-  if (opcio1.length == 0) { // OPCIÓ 1 Obligatori // -------------------	
+  if (opcio1.length == "") { // OPCIÓ 1 Obligatori // -------------------	
     avisOpcio1.innerHTML = "l'Opció 1 és obligatoria!"
     resultat = false
   }
@@ -32,7 +32,7 @@ elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. N
     avisNomEnquesta.innerHTML = "";
   }
 
-  if (opcio2.length == 0) { // OPCIÓ 2 Obligatori // -------------------	
+  if (opcio2.length == "") { // OPCIÓ 2 Obligatori // -------------------	
     avisOpcio2.innerHTML = "l'Opció 2 és obligatoria!"
     resultat = false
   }
@@ -43,16 +43,15 @@ elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. N
   // ENVIO  //////// -----------------------------------------------------------------------------
   if(resultat) {
     // REDIRIGUEIXO A ON TOQUI
-    window.location = "./enquesta_rebuda.html"
+   // window.location = "./enquesta_rebuda.html"
   }
-
-  return resultat;
+  return resultat; 
 })
 
-// FUNCIÓ PER MOSTRAR OCULTAR Input Formulari: ---------------------
+// MOSTRAR OCULTAR Input Formulari: ---------------------
 function mostrarCampo() {
   var campo = document.getElementById('campoOculto');
-  campo.style.display = 'block'; // O 'inline' según sea necesario
+  campo.style.display = 'block'; 
 } 
 
 // MOSTRAR DADES D'ENQUESTA CREADA: ---------------------------------------------
@@ -77,8 +76,8 @@ function afegirFila() {
 
   // Asignar valors a les celdes
   celdaEnquesta.innerHTML = nomEnquesta;
-  celdaOpcio1.innerHTML = opcio1;
-  celdaOpcio2.innerHTML = opcio2;
+  celdaOpcio1.innerHTML = '<button onclick="mostrarOpcio1(this)" class="boto_taula"> '+opcio1+' </button>'; // BOTÓ PER ESCOLLIR OPCIÓ"
+  celdaOpcio2.innerHTML = '<button onclick="mostrarOpcio2(this)" class="boto_taula"> '+opcio2+' </button>'; // BOTÓ PER ESCOLLIR OPCIÓ"
   celdaAccio.innerHTML = '<button onclick="borrarFila(this)" class="boto_mes_opcions"> X </button>'; // BOTÓ PER BORRAR "X" 
   celdaAccioEnviar.innerHTML = '<button onclick="enviarResultat(this)" class="boto_taula">Enviar >> </button>'; // BOTÓ PER ENVIAR A PÀGINA RESULTAT <<< PENDENT!!
 
@@ -87,12 +86,6 @@ function afegirFila() {
   document.getElementById("opcio_1").value = '';
   document.getElementById("opcio_2").value = '';
 }
-
-// FUNCIÓ PER ENVIAR A PÀGINA RESULTAT <<< PENDENT!!!!
-function enviarResultat(boto) {
-  // prova  ENVIAR RESULTAT: <<< Pendent enviar dades...
-  window.location = "./enquesta_rebuda.html"
-} 
 
 // FUNCIÓ PER BORRAR Fila
 function borrarFila(boto) {
@@ -104,5 +97,49 @@ function borrarFila(boto) {
   taula.deleteRow(fila.rowIndex - 1);
 } 
 
+// COMPTADOR-VALIDADOR DE CARACTERS: ---------------------------------------------------------
 
+let contingutInput = ""
+let maximCaracters = 25
 
+function controlaLongitud(){ // Comptador OPCIÓ 1 ------
+  numeroCaracters = document.forms[0].opcio_1.value.length 
+  console.log(contingutInput)
+  if (numeroCaracters > maximCaracters) {
+      document.forms[0].opcio_1.value = contingutInput
+  }else{
+      contingutInput = document.forms[0].opcio_1.value
+  }
+
+  if (numeroCaracters >= maximCaracters){
+      document.forms[0].caracters.style.color="#ff0000";
+  }else{
+      document.forms[0].caracters.style.color="#000000";
+  }
+  comptador()
+}
+
+function comptador(){
+  document.forms[0].caracters.value=document.forms[0].opcio_1.value.length
+}
+
+function controlaLongitudOpcio2(){ // Comptador OPCIÓ 2 ------
+  numeroCaracters = document.forms[0].opcio_2.value.length 
+  console.log(contingutInput)
+  if (numeroCaracters > maximCaracters) {
+      document.forms[0].opcio_2.value = contingutInput
+  }else{
+      contingutInput = document.forms[0].opcio_2.value
+  }
+
+  if (numeroCaracters >= maximCaracters){
+      document.forms[0].caracters_op2.style.color="#ff0000";
+  }else{
+      document.forms[0].caracters_op2.style.color="#000000";
+  }
+  comptadorOpcio2()
+}
+
+function comptadorOpcio2(){
+  document.forms[0].caracters_op2.value=document.forms[0].opcio_2.value.length
+}

@@ -15,11 +15,15 @@ body { padding-top: 10px; }
 .textbase { font-size: 14px; }
 
 h1 {
-    font-size: 26px; color: orangered;
+    font-size: 26px; 
+    color: orangered;
 }
 
 h2 {
-    font-size: 24px; color: orangered; margin-top: 10px; margin-bottom: 5px;
+    font-size: 24px; 
+    color: orangered; 
+    margin-top: 10px; 
+    margin-bottom: 5px;
 }
 
 .titul_enquesta {
@@ -114,7 +118,8 @@ textarea {
 }  */
 
 label {
-    font-size: 17px;;
+    font-size: 17px;
+    margin-top: 150px;
 }
 
 .radio-checkbox {width: 6%;} /* input type radio iCheckbox perquè No baixin... */
@@ -145,15 +150,15 @@ label.required::after {
     margin-left: 5px;
   }
 
- textarea {
-    width: 94%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.comtador-caracters {
+   padding: 5px;
+   width: 25px;
+   border-radius: 25px;
+   display: inline;
+   font-size: 11px;
+   box-shadow: none;
 }
+
 
 /* TEXT AVÍS Camps obligatoris Formulari... */
 span {  
@@ -176,17 +181,16 @@ span {
   }
   
   .boto:hover {
-    background-color: red;
+    background-color: rgb(68, 66, 66);
   }
   
   .boto:active {
-    background-color: rgb(41, 40, 40);
+    background-color: rgb(35, 34, 34);
   }
 
   .boto:visited {
-    background-color: rgb(117, 113, 113);
+    background-color: rgba(255, 68, 0, 0.749);
   }
-
 
   .boto_mes_opcions { /* BOTÓ + Més Opcions input Formulari i "x" Borrar Taula  */
     background-color: rgb(193, 188, 188);
@@ -215,8 +219,7 @@ span {
     height: 30px;
   }
 
-
-/*  INPUT del FORMULARI PER MOSTRA I OCULTAR: */ 
+/*  INPUT del FORMULARI PER MOSTRAR I OCULTAR: */ 
 #campoOculto {
     display: none; /* Ocultar inicialment */
 }

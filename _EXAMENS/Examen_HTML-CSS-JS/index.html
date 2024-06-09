@@ -25,31 +25,32 @@
 		<form id="elForm" name="miForm"> <!-- FORMULARI CREAR ENQUESTA ------------------------>
 
 			<label for="nom_enquesta" class="required">Nom de l'Enquesta</label> <!-- NOM DE L'ENQUESTA ---->
-			<input type="text" id="nom_enquesta" name="nom_enquesta" placeholder="Posa un nom a l'Enquesta"> 
-			<span id="avis_nom_enquesta"></span>	
+				<input type="text" id="nom_enquesta" name="nom_enquesta" placeholder="Posa un nom a l'Enquesta"> 
+				<span id="avis_nom_enquesta"></span>	
 
 			<label for="opcio_1" class="required">Opció 1:</label> <!-- OPCIÓ 1 ---->
-				<input type="text" id="opcio_1" name="opcio_1" placeholder="Escriu l'opció 1"> 
+				<input type="text" id="opcio_1" name="opcio_1" placeholder="Escriu l'opció 1" onKeyDown="controlaLongitud()" onKeyUp="controlaLongitud()"> 
+				<input type="text" name="caracters" size="4" class="comtador-caracters" disabled > <span class="comtador-caracters"> /  25 </span>
 				<span id="avis_opcio_1"></span>		
 
 			<label for="opcio_2" class="required">Opció 2:</label> <!-- OPCIÓ 2 ----->
-			<input type="text" id="opcio_2" name="opcio_2" placeholder="Escriu l'opció 2">
-			<span id="avis_opcio_2"></span>	
+				<input type="text" id="opcio_2" name="opcio_2" placeholder="Escriu l'opció 2" onKeyDown="controlaLongitudOpcio2()" onKeyUp="controlaLongitudOpcio2()">
+				<input type="text" name="caracters_op2" size="4" class="comtador-caracters" disabled > <span class="comtador-caracters"> /  25 </span>
+				<span id="avis_opcio_2"></span>	
 
-			<!-- PROVA mostrar ocultar Input OPCIÓ 3:  ------------------------->
+			<!-- Mostrar ocultar Input OPCIÓ 3:  ------------------------->
 			<button onclick="mostrarCampo()" class="boto_mes_opcions">+</button>
 			<input type="text" id="campoOculto" placeholder="Escriu l'opció 3">
 
 		<!--<input type="submit" class="boto" name="envio" value="Crear" onclick="afegirFila()"> -->
 			<button onclick="afegirFila()" class="boto"> Crear Enquesta </button>
 		</form>
-
-        <table id="taula">  <!-- MOSTRAR Valors introduits -->
+        <table id="taula">  <!-- MOSTRA DADES ENQUESTA PER VOTAR -->
             <thead>
                 <tr>
              <!--   <th>Nom Enquesta</th>
-                    <th>Opció 1</th>
-                    <th>Opció 2</th>     -->             
+                    <th>Opció 1</th> << BOTO Escollir
+                    <th>Opció 2</th> << BOTO Escollir    -->             
              <!--   <th> >Acció Borrar </th> -->
                 </tr>
             </thead>
@@ -57,6 +58,21 @@
                 <!-- Espai per afegir les FILES -->
             </tbody>
         </table>
+
+        <table id="taula_resultat">  <!-- MOSTRA RESULTAT VOTACIÓ ENQUESTA <<< No Surt!! -->
+            <thead>
+                <tr>
+             <!--   <th>Nom Enquesta</th>
+                    <th>Opció 1</th> 
+                    <th>Opció 2</th>  -->             
+             <!--   <th> >Acció Enviar </th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Espai per afegir les FILES -->
+            </tbody>
+        </table>
+
 	</div>
 
 		<script src="scripts.js"></script> <!-- Codi JS Extern ---->
