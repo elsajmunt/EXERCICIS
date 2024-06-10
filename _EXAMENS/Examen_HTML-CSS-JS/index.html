@@ -21,8 +21,7 @@
 		<div class="contingut">
 		<span class="titul_enquesta">Crea aquí la teva enquesta</span>
 		
-
-		<form id="elForm" name="miForm"> <!-- FORMULARI CREAR ENQUESTA ------------------------>
+		<form id="elForm" name="miForm" action="#"> <!-- FORMULARI. action="#" envia resultat a la mateixa pàgina ---------------->
 
 			<label for="nom_enquesta" class="required">Nom de l'Enquesta</label> <!-- NOM DE L'ENQUESTA ---->
 				<input type="text" id="nom_enquesta" name="nom_enquesta" placeholder="Posa un nom a l'Enquesta"> 
@@ -42,38 +41,19 @@
 			<button onclick="mostrarCampo()" class="boto_mes_opcions">+</button>
 			<input type="text" id="campoOculto" placeholder="Escriu l'opció 3">
 
-		<!--<input type="submit" class="boto" name="envio" value="Crear" onclick="afegirFila()"> -->
-			<button onclick="afegirFila()" class="boto"> Crear Enquesta </button>
+		<input type="submit" class="boto" name="envio" value="Crear"> 
+			<!--button onclick="afegirFila()" class="boto"> Crear Enquesta </button-->
 		</form>
-        <table id="taula">  <!-- MOSTRA DADES ENQUESTA PER VOTAR -->
-            <thead>
-                <tr>
-             <!--   <th>Nom Enquesta</th>
-                    <th>Opció 1</th> << BOTO Escollir
-                    <th>Opció 2</th> << BOTO Escollir    -->             
-             <!--   <th> >Acció Borrar </th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Espai per afegir les FILES -->
-            </tbody>
-        </table>
+			<table id="taula">  <!-- MOSTRA DADES ENQUESTA PER VOTAR -->
+				<thead>
+				</thead>
+				<tbody>
+					<!-- Espai per afegir les FILES -->
+				</tbody>
+			</table>      
 
-        <table id="taula_resultat">  <!-- MOSTRA RESULTAT VOTACIÓ ENQUESTA <<< No Surt!! -->
-            <thead>
-                <tr>
-             <!--   <th>Nom Enquesta</th>
-                    <th>Opció 1</th> 
-                    <th>Opció 2</th>  -->             
-             <!--   <th> >Acció Enviar </th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Espai per afegir les FILES -->
-            </tbody>
-        </table>
-
-	</div>
+			<div id="resultatVotacio">	<!-- MOSTRA RESULTAT VOTACIÓ --></div>
+		</div>
 
 		<script src="scripts.js"></script> <!-- Codi JS Extern ---->
 	</body>

@@ -27,19 +27,17 @@ h2 {
 }
 
 .titul_enquesta {
-    font-size: 22px; 
+    font-size: 18px; 
     font-weight: bold;
     color: orangered; 
     margin-top: 10px; 
     margin-bottom: 30px; 
 }
 
-.imatge_enquesta {
-    margin-right: 5px; 
-    display: inline;
-    border-radius: 10px;
-    border-width: medium;
-    border-color: rgb(19, 18, 18);
+.titul_votacio {
+  font-size: 15px; 
+  font-weight: bold;
+  color: orangered; 
 }
 
 /* TAULA ************************** */
@@ -59,13 +57,11 @@ table, td, th {
     padding: 10px;
   }
 
-
 hr {
     border-top: 1px solid rgb(214, 214, 209);
     margin-top: 5px;
     width: 500px;
   }
-
 
 /* BARRA DE NAVEGACIÓ ***************************************************** */
 
@@ -107,15 +103,7 @@ nav li a:hover{
      color: #5E5D6E;
 }
 
-
 /* FORMULARI **************************************************** */
-
-/* Elements Formulari ben colocats en block  (Provar ?)
-label:not(.inline),
-input:not(.inline),
-textarea {
-    display: block;
-}  */
 
 label {
     font-size: 17px;
@@ -137,11 +125,10 @@ input {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
  }
 
-/* Estilos para el input cuando está en estado :focus */
 input:focus {
     background-color: #f0f0f0;
-    border-color: orangered; /* Cambio de color del borde */
-    outline: none; /* Eliminar contorno predeterminado */
+    border-color: orangered; /* color del borde */
+    outline: none; /* Eliminar contorn predeterminat */
 }
 
 label.required::after {
@@ -159,13 +146,12 @@ label.required::after {
    box-shadow: none;
 }
 
-
 /* TEXT AVÍS Camps obligatoris Formulari... */
 span {  
     color: orangered;  font-size: 12px; display: block; /* block perquè faci Return */
 }
 
-/* BOTONS */
+/* BOTONS ************************************ */
 
 .boto {
     padding: 10px 20px;
@@ -207,16 +193,16 @@ span {
   }
   
   .boto_taula {
-    padding: 4px 4px;
+    padding: 4px;
     background-color: orangered;
     color: white;
-    font-size: 12px; 
+    font-size: 13px; 
     border: none;
     border-radius: 5px;
     cursor: pointer; 
     text-decoration: none;
-    width: 90px;
-    height: 30px;
+    width: 80%;
+    height: 60px;
   }
 
 /*  INPUT del FORMULARI PER MOSTRAR I OCULTAR: */ 

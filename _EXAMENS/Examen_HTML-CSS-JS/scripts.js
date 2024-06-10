@@ -1,6 +1,9 @@
 
+let vots1 = 0;
+let vots2 = 0;
 let elFormulari = document.getElementById("elForm");
-elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. Noms elements PREDETERMINATS. Salta al clicar Submit
+elFormulari.addEventListener("submit", 
+function (event) { //FUNCIÓ sense nom. Noms elements PREDETERMINATS. Salta al clicar Submit
   event.preventDefault();
 
   // VARIABLES per VALIDACIONS FORMULARI: /////// -------------------------------------------------------------------------------
@@ -42,11 +45,11 @@ elFormulari.addEventListener("submit", function (event) { //FUNCIÓ sense nom. N
 
   // ENVIO  //////// -----------------------------------------------------------------------------
   if(resultat) {
-    // REDIRIGUEIXO A ON TOQUI
-   // window.location = "./enquesta_rebuda.html"
+    afegirFila();
   }
   return resultat; 
-})
+}
+)
 
 // MOSTRAR OCULTAR Input Formulari: ---------------------
 function mostrarCampo() {
@@ -72,19 +75,25 @@ function afegirFila() {
   let celdaOpcio1 = novaFila.insertCell(1);
   let celdaOpcio2 = novaFila.insertCell(2);
   let celdaAccio = novaFila.insertCell(3); // Acció de Borrar
-  let celdaAccioEnviar = novaFila.insertCell(4); // Acció d'Enviar
 
   // Asignar valors a les celdes
-  celdaEnquesta.innerHTML = nomEnquesta;
-  celdaOpcio1.innerHTML = '<button onclick="mostrarOpcio1(this)" class="boto_taula"> '+opcio1+' </button>'; // BOTÓ PER ESCOLLIR OPCIÓ"
-  celdaOpcio2.innerHTML = '<button onclick="mostrarOpcio2(this)" class="boto_taula"> '+opcio2+' </button>'; // BOTÓ PER ESCOLLIR OPCIÓ"
-  celdaAccio.innerHTML = '<button onclick="borrarFila(this)" class="boto_mes_opcions"> X </button>'; // BOTÓ PER BORRAR "X" 
-  celdaAccioEnviar.innerHTML = '<button onclick="enviarResultat(this)" class="boto_taula">Enviar >> </button>'; // BOTÓ PER ENVIAR A PÀGINA RESULTAT <<< PENDENT!!
+  celdaEnquesta.innerHTML = '<span class="titul_enquesta"> '+nomEnquesta+' </span>';
+  celdaOpcio1.innerHTML = '<button onclick="mostrarOpcio(\''+opcio1+'\',1)" class="boto_taula"> '+opcio1+' </button>'; // BOTÓ PER ESCOLLIR OPCIÓ"
+  celdaOpcio2.innerHTML = '<button onclick="mostrarOpcio(\''+opcio2+'\',2)" class="boto_taula"> '+opcio2+' </button>'; // BOTÓ PER ESCOLLIR OPCIÓ"
+  celdaAccio.innerHTML = '<button onclick="borrarFila(this)" class="boto_mes_opcions"> X </button>'; // BOTÓ PER BORRAR la fila "X" 
 
   // Netejar els camps d'entrada
   document.getElementById("nom_enquesta").value = '';
   document.getElementById("opcio_1").value = '';
   document.getElementById("opcio_2").value = '';
+
+  let resultatVotacio = document.getElementById("resultatVotacio"); // RESULTAT VOTACIÓ
+  let resultatOpcio1 = document.createElement("p");
+  resultatOpcio1.textContent=opcio1+", vots : 0";
+  let resultatOpcio2 = document.createElement("p");
+  resultatOpcio2.textContent=opcio2+", vots : 0";
+  resultatVotacio.appendChild(resultatOpcio1);
+  resultatVotacio.appendChild(resultatOpcio2);
 }
 
 // FUNCIÓ PER BORRAR Fila
@@ -142,4 +151,21 @@ function controlaLongitudOpcio2(){ // Comptador OPCIÓ 2 ------
 
 function comptadorOpcio2(){
   document.forms[0].caracters_op2.value=document.forms[0].opcio_2.value.length
+}
+
+// MOSTRAR RESULTAT VOTACIÓ: ---------------------------------
+function mostrarOpcio(opcio, valor) {
+  let vots = 0;
+  if (valor == 1 ) {
+    vots1++;
+    vots = vots1;    
+  }
+  else {
+    vots2++;
+    vots = vots2;
+  }
+  element = document.getElementById("resultatVotacio");
+  llistaResultats = element.getElementsByTagName("p");
+  console.log(llistaResultats);
+  llistaResultats[valor-1].innerHTML='<b> '+opcio+' </b>'+" "+ ". Votacions: "+vots; 
 }
