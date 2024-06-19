@@ -1,0 +1,211 @@
+/* ESTILS GENERALS **************************************************** */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body { padding-top: 10px; }
+
+.contingut {
+    max-width: 770px; 
+    margin: 0 auto; 
+    padding: 22;}
+
+.textbase { font-size: 14px; }
+
+h1 {
+    font-size: 26px; 
+    color: orangered;
+}
+
+h2 {
+    font-size: 24px; 
+    color: orangered; 
+    margin-top: 10px; 
+    margin-bottom: 5px;
+}
+
+.titul_enquesta {
+    font-size: 18px; 
+    font-weight: bold;
+    color: orangered; 
+    margin-top: 10px; 
+    margin-bottom: 30px; 
+}
+
+.titul_votacio {
+  font-size: 15px; 
+  font-weight: bold;
+  color: orangered; 
+}
+
+/* TAULA ************************** */
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 10px;
+  }
+
+hr {
+    border-top: 1px solid rgb(214, 214, 209);
+    margin-top: 5px;
+    width: 500px;
+  }
+
+/* BARRA DE NAVEGACIÓ ***************************************************** */
+
+header{
+   top: 0px;   
+   margin-bottom: 25px; 
+   /*  position: fixed; */
+    width: 100%;
+    height: 70px;  
+    background-color: #F7F9FA;
+   /* z-index: 1; */
+}
+nav{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+header img{
+    padding: 18px 10px;
+}
+nav ul{
+    float: right;
+    list-style: none;
+    text-align: center;
+    vertical-align: top;
+}
+nav li{
+    list-style-type: none;
+    padding: 0px;
+    display: inline;
+}
+nav li a{
+    color: black;
+    font-size: 1em;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 15px 10px;
+}
+nav li a:hover{
+     color: #5E5D6E;
+}
+
+/* FORMULARI **************************************************** */
+
+label {
+    font-size: 17px;
+    margin-top: 150px;
+}
+
+.radio-checkbox {width: 6%;} /* input type radio iCheckbox perquè No baixin... */
+
+form {max-width: 500px; margin: 0 auto;}
+
+input {
+   -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+input:focus {
+    background-color: #f0f0f0;
+    border-color: orangered; /* color del borde */
+    outline: none; /* Eliminar contorn predeterminat */
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+  }
+
+.comtador-caracters {
+   padding: 5px;
+   width: 25px;
+   border-radius: 25px;
+   display: inline;
+   font-size: 11px;
+   box-shadow: none;
+}
+
+/* TEXT AVÍS Camps obligatoris Formulari... */
+span {  
+    color: orangered;  font-size: 12px; display: block; /* block perquè faci Return */
+}
+
+/* BOTONS ************************************ */
+
+.boto {
+    padding: 10px 20px;
+    background-color: orangered;
+    color: white;
+    font-size: 17px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    text-decoration: none;
+    width: 300px;
+    margin-top: 25px;
+  }
+  
+  .boto:hover {
+    background-color: rgb(68, 66, 66);
+  }
+  
+  .boto:active {
+    background-color: rgb(35, 34, 34);
+  }
+
+  .boto:visited {
+    background-color: rgba(255, 68, 0, 0.749);
+  }
+
+  .boto_mes_opcions { /* BOTÓ + Més Opcions input Formulari i "x" Borrar Taula  */
+    background-color: rgb(193, 188, 188);
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    display: block;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .boto_mes_opcions:hover { 
+    background-color: orangered;
+  }
+  
+  .boto_taula {
+    padding: 4px;
+    background-color: orangered;
+    color: white;
+    font-size: 13px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    text-decoration: none;
+    width: 80%;
+    height: 60px;
+  }
+
+/*  INPUT del FORMULARI PER MOSTRAR I OCULTAR: */ 
+#campoOculto {
+    display: none; /* Ocultar inicialment */
+}

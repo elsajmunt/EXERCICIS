@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+		<meta charset="UTF-8">
+		<meta name="Enquesta" content="Formulari">
+		<link rel="stylesheet" href="estils.css">
+		<title>Enquesta Xarxa Social</title>
+	</head>
+	<body>		
+		<header> 
+			<nav> <!-- BARRA NAVEGACIÓ XARXA SOCIAL ------------------------>
+			<a href="index.html"><img src="imatges/logo.jpg" alt="Logo" width="90" height="55"></a>
+			<ul>
+				<li><a href="index.html">Inici</a></li>
+				<li><a href="#">Amics</a></li>
+				<li><a href="#">Contacte</a></li>
+			</ul>
+			</nav>
+		</header>
+		<div class="contingut">
+		<span class="titul_enquesta">Crea aquí la teva enquesta</span>
+
+        <form id="formulari_enquesta" name="formulari_enquesta" method="POST" action="novaEnquesta.php"> <!-- Resultat s'envia a novaEnquesta.php -->
+			<label for="titol_enquesta" class="required">Nom de l'Enquesta</label> <!-- NOM DE L'ENQUESTA --------->
+			<input type="text" id="titol_enquesta" name="titol_enquesta" placeholder="Posa un Títol a l'Enquesta">
+				<span id="avis_titol_enquesta"></span>	
+
+			<label for="opcio_1" class="required">Opció 1:</label> <!-- OPCIÓ 1 --------->
+				<input type="text" id="opcio_1" name="opcio_1" placeholder="Escriu l'opció 1" onKeyDown="controlaLongitud()" onKeyUp="controlaLongitud()"> 
+				<input type="text" name="caracters" size="4" class="comtador-caracters" disabled > <span class="comtador-caracters"> /  25 </span>
+				<span id="avis_opcio_1"></span>		
+
+			<label for="opcio_2" class="required">Opció 2:</label> <!-- OPCIÓ 2 ---------->
+				<input type="text" id="opcio_2" name="opcio_2" placeholder="Escriu l'opció 2" onKeyDown="controlaLongitudOpcio2()" onKeyUp="controlaLongitudOpcio2()">
+				<input type="text" name="caracters_op2" size="4" class="comtador-caracters" disabled > <span class="comtador-caracters"> /  25 </span>
+				<span id="avis_opcio_2"></span>	
+
+			<!-- Mostrar ocultar Input OPCIÓ 3:  ------------------------->
+			<button onclick="mostrarCampo()" class="boto_mes_opcions">+</button>
+			<input type="text" id="campoOculto" placeholder="Escriu l'opció 3">
+
+			<input type="submit" class="boto" name="enviar" value="Crear"> 
+			<!--button onclick="afegirFila()" class="boto"> Crear Enquesta </button-->
+		</form>
+ 
+			<!--<table id="taula"> MOSTRA DADES ENQUESTA PER VOTAR
+				<thead>
+				</thead>
+				<tbody>
+					 Espai per afegir les FILES 
+				</tbody>
+			</table>      
+
+			<div id="resultatVotacio">	 MOSTRA RESULTAT VOTACIÓ </div> -->
+		</div>
+
+		<script src="scripts.js"></script> <!-- Codi JS Extern ---->
+	</body>
+</html>
