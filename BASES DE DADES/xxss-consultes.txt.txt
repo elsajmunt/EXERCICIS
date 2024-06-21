@@ -1,0 +1,42 @@
+// NOVA ENQUESTA
+INSERT INTO `enquesta` (`id`, `titol`, `idUsuari`) VALUES (NULL, 'simpsons', '5');
+
+// OPCIONS
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Filemón', '2');
+
+
+// dades d'una consulta
+SELECT * FROM enquesta e, opcionsenquesta oe WHERE oe.idEnquesta = e.id AND e.id=1 ORDER BY e.id;
+
+
+SELECT u.nom, e.titol, oe.nom FROM usuaris u, `resultatsenquesta` re, enquesta e, opcionsenquesta oe WHERE u.id = re.idUsuari AND oe.idEnquesta=e.id AND re.idOpcioEnquesta = oe.id;
+
+-------------------------------------------------------
+// INSERTO NOVES OPCIÓNS A ESCOLLIR D'UNA ENQUESTA
+
+De l'Enquesta MENJAR (id 1):
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Calamars', '1');
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Tofu', '1');
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Carn', '1');
+
+De l'Enquesta VIATGES (id 3):
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Amsterdam', '3');
+
+
+De l'Enquesta COMICS (id 2):
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Barrufet rondinaire', '2');
+
+---
+// BORRO UNA ENQUESTA
+DELETE FROM `enquesta` WHERE `enquesta`.`id` = 7
+DELETE FROM enquesta WHERE `enquesta`.`id` = 9
+DELETE FROM `opcionsenquesta` WHERE `opcionsenquesta`.`id` = 19
+
+--
+INSERT INTO `enquesta` (`id`, `titol`, `idUsuari`) VALUES (NULL, 'esports', '3');
+
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES (NULL, 'Volei platja', '4');
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES ('8', 'Volei platja', '4');
+INSERT INTO `opcionsenquesta` (`id`, `nom`, `idEnquesta`) VALUES ('10', 'Futbol', '4');
+
+

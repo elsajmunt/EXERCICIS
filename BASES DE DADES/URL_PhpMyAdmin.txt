@@ -5,3 +5,9 @@ http://localhost/phpmyadmin/index.php?
 
 Base Dades creada (Ciutats i Persones...):
 http://localhost/phpmyadmin/index.php?route=/sql&db=ciutats&table=personas&pos=0
+
+Exercici Registre/Inici Sesió:
+http://localhost/exercici-bd_Login-Registre/
+http://localhost/exercici-bd_Login-Registre/login/formulari_login.html
+
+http://localhost/exercici-bbdd_poblacions-persones/poblacions.php

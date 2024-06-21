@@ -1,0 +1,16 @@
+<?php    // REGISTRE a la Xarxa Social
+
+//include ('conexio.php'); // Per incloure els docs vinculats a la BD? Posar a cada doc php..?
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "xarxa_social"; // Nom de la Base de Dades
+
+// Crear conexió a la Base de Dades
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexió
+if ($conn->connect_error) {
+    die("Conexió fallida: " . $conn->connect_error);
+}
