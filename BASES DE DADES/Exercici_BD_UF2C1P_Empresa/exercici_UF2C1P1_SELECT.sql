@@ -1,0 +1,25 @@
+-- 1. Llista totes les dades de les oficines.
+-- SELECT * FROM Oficines;
+-- 2. Llista el nom, oficina, i data de contracte de tots els empleats.
+-- SELECT nom, oficina, contracte FROM empleats;
+-- 3. Llista els atributs codfab, codprod, descripció i preu de tots els productes.
+-- SELECT codfab, codprod, descr, preu FROM productes;
+-- 4. Respecte a la consulta de l'apartat anterior: com a títol de la primera columna apareixerà fabricant en comptes de ‘codfab’.
+-- SELECT codfab AS fabricant, codprod, descr, preu FROM productes;
+-- 5. Llista la ciutat, regió i el superàvit de cada oficina. oficinaoficina
+-- SELECT ciutat, regio, objectiu FROM oficines; 
+-- 6. De cada producte obtingui el seu fabricant, el codi producte, la seva descripció i el valor de l’inventari.
+-- SELECT codfab, codprod, descr, existencies FROM productes;
+-- 7. Llista el nom, mes i any del contracte de cada venedor. La funció MONTH(DATA) 
+-- SELECT nom, MONTH(contracte), YEAR(contracte) FROM empleats; 
+-- 8. Obtingui un llistat ordenat alfabèticament (pel nom) dels empleats.
+-- SELECT nom FROM empleats ORDER BY nom;
+-- 10. Obtingui un llistat dels empleats (numemp, nom i vendes) ordenats per volum de vendes traient els de menors vendes primer.
+-- SELECT numemp, nom, vendes FROM empleats ORDER BY vendes;
+-- 11. Obtingui un llistat dels empleats (numemp, nom i vendes)  per ordre d’antiguitat a l’empresa començant pels incorporats més recentment.
+-- SELECT numemp, nom, vendes, contracte FROM empleats ORDER BY contracte DESC;
+-- 12. Obtingui un llistat dels empleats (numemp, nom i vendes) ordenats per volum de vendes traient primer els de majors vendes.
+-- SELECT numemp, nom, vendes FROM empleats ORDER BY vendes DESC; 
+-- 13.	Mostra les vendes de cada oficina, ordenades per ordre alfabètic de regió i dins de cada regió per ciutat. 
+-- SELECT ciutat, regio, vendes FROM oficines ORDER BY regio, ciutat;
+-- 
