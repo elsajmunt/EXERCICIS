@@ -1,0 +1,10 @@
+
+SELECT codprod, existencies FROM productes WHERE existencies=0;
+
+SELECT nom, oficina, edat FROM empleats WHERE oficina='12' AND edat >'30'; 
+
+SELECT numemp, nom, vendes, salari FROM empleats WHERE vendes > salari;
+
+SELECT regio, ciutat, vendes FROM oficines; 
+
+SELECT * FROM comanda WHERE year(data)=1990;

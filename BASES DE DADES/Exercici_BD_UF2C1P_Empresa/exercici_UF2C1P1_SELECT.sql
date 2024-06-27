@@ -22,4 +22,11 @@
 -- SELECT numemp, nom, vendes FROM empleats ORDER BY vendes DESC; 
 -- 13.	Mostra les vendes de cada oficina, ordenades per ordre alfabètic de regió i dins de cada regió per ciutat. 
 -- SELECT ciutat, regio, vendes FROM oficines ORDER BY regio, ciutat;
--- 
+-- 14. Llista les oficines (regió, ciutat i superavit) classificades per regió i dins de cada regió pel superàvit de manera que les de major superàvit apareguin les primeres.
+-- SELECT regio, ciutat, vendes FROM oficines ORDER BY regio, vendes DESC;
+-- 15. Llista els codis dels directors de les oficines. El director 108 apareix en sis oficines, per tant apareixerà sis vegades en el resultat de la consulta.
+-- SELECT dir FROM oficines;
+-- 16. Torna a fer l'exercici 15 però ara volem que el director 108 aparegui una sola vegada. 
+-- SELECT DISTINCT dir FROM oficines;
+
+
