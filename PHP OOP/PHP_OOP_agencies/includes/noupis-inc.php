@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["send"])){
     $noupis = new PisContr($id, $nompis, $imatge, $ubicacio, $descripcio);
     $noupis->nouPis();
 
-    //Volver a la pagina inicial
-    header("Location: ../view/noupis.html?error=none");
+    //Volver a la pagina inicial (si està tot bé!)
+    header("Location: ../view/llista_pisos.php"); // RESULTAT OK
 
 }

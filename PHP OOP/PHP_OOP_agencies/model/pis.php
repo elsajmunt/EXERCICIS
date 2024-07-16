@@ -12,7 +12,7 @@ class Pis extends Connection{
         return $error;
     }
 
-    protected function checkPis($nompis, $id){ // MOSTRAR DADES ?  <<<< Adaptar noms
+    protected function checkPis($nompis, $id){ // MOSTRAR DADES ?
         $stmt = $this->connect()->prepare("SELECT pisos_nompis FROM pisos WHERE nompis = ? OR id = ?;"); //?..
         if(!$stmt->execute(array($nompis, $id))){
             $stmt = null;

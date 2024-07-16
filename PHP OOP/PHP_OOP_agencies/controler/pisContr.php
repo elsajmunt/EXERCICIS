@@ -63,13 +63,13 @@ class pisContr extends Pis{ // Classe Pis està a la carpeta Model
             }
 
             if($this->invalidPisname() == false){
-                header("Location: ../view/signup.html?ERROR=Maxim20Caracters!");
+                header("Location: ../view/nou_pis.html?ERROR=Maxim20Caracters!");
                 exit();
             }
             
             //setPis to DB 
-            if($this->setPis($this->nompis, $this->imatge, $this->ubicacio, $this->descripcio )){ // Funció setPis està a Model/pis.php
-                header("Location: ../view/nou_pis.html?error=FailedStmt"); // error=FailedStmt per què?
+            if($this->setPis($this->nompis, $this->imatge, $this->ubicacio, $this->descripcio ) /*== true*/){ // Funció setPis està a Model/pis.php
+                header("Location: ../view/nou_pis.html?error=FailedStmt"); // $error = true; Resultat Error!
             }
         }    
 
