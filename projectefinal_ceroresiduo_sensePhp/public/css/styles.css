@@ -1,0 +1,270 @@
+/* EXEMPLE DE  VARIABLES https://www.eniun.com/variables-css-custom-properties-propiedades-personalizadas/  */
+:root {   /* VARIABLES */ 
+    --colorcorporatiu-verd: #7bdcb5; /* Color Corporatiu LOGO */
+    --colorcorporatiu-gris: grey;
+  }
+
+* {             
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {   /* BARRA MENÚ PRINCIPAL ------------------------------------ */   
+    display: flex; /* Elements i Enllaços ordenats Horitzontalment */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    /* background-color: #f6f5f5; */
+}
+
+/* .brand-title { /* LOGO 
+    font-size: 1.5em;
+} */
+
+.navbar-links ul {
+    display: flex;
+    list-style: none; /* Treu punts llista */
+}
+
+.navbar-links li {
+    margin-left: 20px; /* Espai entre Enllaços */
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: var(--colorcorporatiu-gris);   
+   /* color: gray; */
+    font-size: 1.1em;
+}
+
+.navbar-links a:hover{ 
+    color: var(--colorcorporatiu-verd);
+/* color: #7bdcb5; /* Color Corporatiu Logo  */
+}
+
+.toggle-button {  /* Menú Desplegable Format Mòbil... */
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--colorcorporatiu-gris);
+    margin: 4px 0;
+} 
+
+.navbarcategories {   /* BARRA MENÚ CATEGORIES ------------------------------- */   
+    display: flex; /* Elements i Enllaços ordenats Horitzontalment */
+/*  justify-content: space-between; */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.navbarcategories-links ul {
+    display: flex;
+    list-style: none; /* Treu punts llista */
+}
+
+.navbarcategories-links li {
+    margin-left: 20px; /* Espai entre Enllaços */
+}
+
+.navbarcategories-links a {
+    text-decoration: none;
+    color: var(--colorcorporatiu-verd);   
+    font-size: 1.2em;
+}
+
+.navbarcategories-links a:hover{ 
+    color: var(--colorcorporatiu-gris);
+} 
+
+.toggle-buttoncategories {  /* Menú Desplegable Format Mòbil... */
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-buttoncategories .barcateg {
+    width: 25px;
+    height: 3px;
+    background-color: var(--colorcorporatiu-gris);
+    margin: 4px 0;
+} 
+
+/* LLISTA PRODUCTES -------------------------------------------------------- */ 
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Espai entre Productes .product-item */
+}
+.product-item {
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+.product-item img {
+    max-width: 100%;
+ /* border-radius: 8px;*/
+}
+
+.product-item a { /* NOM PRODUCTE i Enllaç */
+    text-decoration: none;
+    color: var(--colorcorporatiu-gris);
+
+}
+
+.product-item a:hover {
+    color: black;
+}
+
+/* .product-item-NomProducte {  NOM PRODUCTE amb Estil propi, No 
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: var(--colorcorporatiu-gris);
+} */
+
+/* .product-item h3 { 
+    font-size: 18px;
+    margin: 15px 0 10px;
+   color: var(--colorcorporatiu-gris);
+} */
+
+/*
+.product-item h3 a {  NO CAL
+    color: var(--colorcorporatiu-gris);
+    text-decoration: none; 
+}
+
+.product-item h3 a:hover {
+    color: black;
+    text-decoration: none; 
+} */
+
+.product-item p {
+    font-size: 14px;
+    color: #555;
+    padding-top:10px;
+}
+
+.product-item-preu {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--colorcorporatiu-verd); 
+    padding-top:10px;
+}
+
+.product-item button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.product-item button:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive styles */   
+@media (max-width: 768px) { /* ESTILS PER DISSENY RESPONSIU ---------------------------------------------- */ 
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column; /* Enllaços ordenats en columna */
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navbar-links a {  
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar-links a:hover{     
+        color: var(--colorcorporatiu-verd);
+      /*  color: #7bdcb5;  Color Corporatiu Logo  */
+   }
+   
+    .navbar-links.active {
+        display: flex;
+        color: #478269; /* No funciona? */
+    }
+
+    .navbarcategories-links { /* MENÚ CATEGORIES ---- */
+        display: none;
+        width: 100%;
+    }
+
+    .navbarcategories {
+        flex-direction: column; /* Enllaços ordenats en columna */
+        align-items: flex-start;
+    }
+
+    .toggle-buttoncategories {  
+        display: flex;
+    }
+
+    .navbarcategories-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbarcategories-links li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navbarcategories-links a {  
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbarcategories-links a:hover{     
+        color: var(--colorcorporatiu-gris);
+   }
+
+    .navbarcategories-links.active {
+        display: flex;
+    }
+}
+
+    /* PROVAR BOTÓ ACTIU (Tret de Video: Barra Navegación responsive...)
+    .navbar-links a:hover,
+    .navbar-links-a_active {     
+        background-color: #7bdcb5; 
+   } */
