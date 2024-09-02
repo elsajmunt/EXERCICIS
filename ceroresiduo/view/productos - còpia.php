@@ -14,32 +14,28 @@
 
             <h2>PRODUCTOS Zero Waste!</h2>
 
-            <div class="product-list"> <!-- PRODUCTES mostra -------------->
+            <div class="product-list"> <!--PRODUCTES -------------->
                 <div class="product-item">
                     <a href="#"><img src="../public/images/products/JabonSolidoLavavajillas.webp" alt="Jabón Sólido Lavavajillas con Bicarbonato - 225 g">
                     <h3>Jabón Sólido Lavavajillas</h3></a>
                     <p>con Bicarbonato - 225 g</p>
                     <div class="product-item-preu">6,10€</div>
-                </div>              
-            </div>
-
-            <div class="product-list"> <!-- Llista PRODUCTES php -------------->
-                <?php
-                    include ("../includes/productos-inc.php");
-                ?>
-                    <?php if($productos!=0){?>
-                    <?php foreach($productos as $producto): ?>
+                 <!--   <button>Ver >></button> -->
+                </div>
                 <div class="product-item">
-                        <a href="#"><img src="../public/images/products/JabonSolidoLavavajillas.webp" alt="Jabón Sólido Lavavajillas con Bicarbonato - 225 g">
-                        <h3><?= $producto["Nombre"] ?></h3></a>
-                        <p><?= $producto["Descripcion"] ?></p>
-                        <div class="product-item-preu"><?= $producto["Precio"] ?></div>
-                </div>   
-                <?php endforeach ?>
-                <?php }?>           
+                    <a href="#"><img src="../public/images/products/MantecaSolarCorporal.webp" alt="Manteca Solar Corporal">
+                    <h3>Manteca Solar Corporal</h3></a>
+                    <p>SPF 50</p> 
+                    <div class="product-item-preu">20,02€</div>
+                </div>
+                <div class="product-item">
+                    <a href="#"><img src="../public/images/products/AcondicionadorSolidoArtesano.webp" alt="Acondicionador Sólido Artesano para Cabello Seco">
+                    <h3>Acondicionador Sólido Artesano</h3></a>
+                    <p>para Cabello Seco</p>
+                    <div class="product-item-preu">12,50€</div>
+                </div>                
             </div>
         </div>
-
          <?php require "footer.php"?> <!-- FOOTER -->
 
         <script src="public/js/scripts.js"></script> 

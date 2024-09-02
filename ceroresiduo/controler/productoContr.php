@@ -42,7 +42,6 @@ class productoContr extends Producto{ // Classe Producto està a la carpeta Mode
        return $this->descripcion;
     }
 
-}
     /****/
       
         public function mostraProductos(){  // FUNCIÓ MOSTRAR TOTS ELS PRODUCTES -------------------       
