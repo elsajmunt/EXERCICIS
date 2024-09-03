@@ -44,12 +44,19 @@ class productoContr extends Producto{ // Classe Producto està a la carpeta Mode
 
     /****/
       
-        public function mostraProductos(){  // FUNCIÓ MOSTRAR TOTS ELS PRODUCTES -------------------       
+        public function mostraProductos(){  // Funció MOSTRAR TOTS ELS PRODUCTES -------------------       
                 // Posar Condicions...                    
                 //selectProductos to DB 
                 $resultat = $this->selectProductos() ;               
                 return $resultat;
-        }              
+        }  
+        
+        // Prova, en procés...: <<<<<<<
+        public function mostraProducto(){  // Funció MOSTRAR PRODUCTE SOL a la FITXA PRODUCTE -------------------       
+            $resultat = $this->selectProducto() ;               
+            return $resultat;
+    }  
+        
 } 
 
 /* Mostra Exemple: -------------------------------------------------------------

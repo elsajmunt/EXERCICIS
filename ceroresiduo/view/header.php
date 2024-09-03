@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar"> <!-- BARRA MENÚ PRINCIPAL ---------- -->
-      <div><a href="../index"> <img src="public/images/header/Logo-cero-residuo-250-125c.webp" alt="Logo Cero Residuo" class="brand-title"></a></div>
+      <div><a href="../index"> <img src="/ceroresiduo/public/images/header/Logo-cero-residuo-250-125c.webp" alt="Logo Cero Residuo" class="brand-title"></a></div>
       <a href="#" class="toggle-button"> <!-- MENÚ Desplegable Format MÒBILS... -->
           <span class="bar"></span> <!-- Línia/Simbol Menú Mobil -->
           <span class="bar"></span>
@@ -40,7 +40,7 @@
 
 <!-- Anteriors NO --------------------------------- 
 <header>
-  <div class="contenidor flex-container"> <!-- Header BARRA NAVEGACIO PROVA amb CSS 
+  <div class="contenidor flex-container"> <-- Header BARRA NAVEGACIO PROVA amb CSS 
     <div><a href="../index"> <img src="Assets/images/header/Logo-cero-residuo-250-125c.webp" alt="Logo Cero Residuo"></a></div>
           <div class="item"><a href="#">Productos</a></div> 
           <div class="item"><a href="#" class="">Tiendas</a></div>

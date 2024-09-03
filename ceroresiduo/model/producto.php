@@ -2,8 +2,8 @@
 class Producto extends Connection{ // CONEXIONS A LA BASE DE DADES: 
 
     // SELECT ---------------
-    protected function selectProductos(){ // MOSTRAR TOTS ELS PRODUCTES -SELECT
-        $stmt = $this->connect()->prepare("SELECT * FROM productos"); //?..
+    protected function selectProductos(){ // MOSTRAR TOTS ELS PRODUCTES 
+        $stmt = $this->connect()->prepare("SELECT * FROM productos"); //
         if(!$stmt->execute()){
             $stmt = null;
             header("Location: .../view/productos.php?error=stmtfailed"); // Error
