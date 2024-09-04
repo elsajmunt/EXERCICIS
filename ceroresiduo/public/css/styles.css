@@ -101,7 +101,7 @@ hr {
     text-decoration: none;
     color:var(--colorcorporatiu-verd-clar); /* Verd Corportatiu més clar, per sobre barra pastilla*/   
     font-size: 1.1em;
-    font-weight:bold;
+   /* font-weight:bold; <<< PROVAR COM QUEDA AMB PANTALLA QUADRADA...*/ 
 }
 
 .navbarcategories-links a:hover{ 
@@ -203,8 +203,8 @@ hr {
 
 /* FITXA PRODUCTE -------------------------------------------------------- */ 
 
-.product-fitxa {
-    display: flex;
+.product-fitxa {  
+    display: flex; 
  /* flex-wrap: wrap; */
     padding-top: 25px;
     padding-left: 25px;

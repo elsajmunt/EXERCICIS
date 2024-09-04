@@ -6,9 +6,10 @@
     require "../controler/productoContr.php"; // Depèn de productoContr.php - Mètodes/Funcions
 
     $productoContr = new ProductoContr(); // Classe del Controler   
-    $productos = $productoContr->mostraProductos(); // mostraProductos és una Funció de la Classe ProductoContr
-
-
+    $productos = $productoContr->mostraProductos(); // TOTS ELS PRODUCTES. mostraProductos=>Funció de la Classe ProductoContr
+    
+    $productoFichaContr = new ProductoContr(); // Classe del Controler  
+    $producto = $productoFichaContr->mostraProducto(); // PRODUCTE SOL per Ficha. mostraProducto=>Funció de la Classe ProductoContr
 
 /* Mostra Exemple:
     <?php // MOSTRAR LLISTA AVIONS       
