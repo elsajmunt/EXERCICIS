@@ -24,15 +24,15 @@
         </a> 
         <div class="navbarcategories-links"> <!--Format PANTALLA AMPLA -->
             <ul>
-                <li><a href="#">HIGIENE PERSONAL</a></li>
-                <li><a href="#">HOGAR</a></li>
-                <li><a href="#">ALIMENTACIÓN</a></li>
-                <li><a href="#">SUPLEMENTOS</a></li>
-                <li><a href="#">CRIANZA</a></li>
-                <li><a href="#">PARA LLEVAR</a></li>
-                <li><a href="#">PAPELERÍA</a></li>
-                <li><a href="#">KITS Y REGALOS</a></li>
-                <li><a href="#">REBAJAS</a></li>
+                <li><a href="categoria_productos.php">HIGIENE PERSONAL</a></li>
+                <li><a href="categoria_productos.php">HOGAR</a></li>
+                <li><a href="categoria_productos.php#">ALIMENTACIÓN</a></li>
+                <li><a href="categoria_productos.php">SUPLEMENTOS</a></li>
+                <li><a href="categoria_productos.php">CRIANZA</a></li>
+                <li><a href="categoria_productos.php">PARA LLEVAR</a></li>
+                <li><a href="categoria_productos.php">PAPELERÍA</a></li>
+                <li><a href="categoria_productos.php">KITS Y REGALOS</a></li>
+                <li><a href="categoria_productos.php">REBAJAS</a></li>
             </ul>
         </div>
     </nav>

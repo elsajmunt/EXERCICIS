@@ -11,6 +11,10 @@
     $productoFichaContr = new ProductoContr(); // Classe del Controler  
     $producto = $productoFichaContr->mostraProducto(); // PRODUCTE SOL per Ficha. mostraProducto=>Funció de la Classe ProductoContr
 
+    $productoCategoriaContr = new ProductoContr(); // Classe del Controler  <<<< Provar!
+    $productosCategoria = $productoCategoriaContr->mostraProductosCategoria(); // PRODUCTES D'UNA CATEGORIA 
+
+
 /* Mostra Exemple:
     <?php // MOSTRAR LLISTA AVIONS       
 

@@ -12,7 +12,7 @@ class productoContr extends Producto{ // Classe Producto està a la carpeta Mode
         $this->descripcion = $descripcion;
     }
 
-    /* Setters and getters */ 
+    /* Setters and Getters: */ 
 
     private function setNombre($nombre){ // NOMBRE
          $this->nombre = $nombre;
@@ -42,17 +42,22 @@ class productoContr extends Producto{ // Classe Producto està a la carpeta Mode
        return $this->descripcion;
     }
 
-    /****/
-      
-        public function mostraProductos(){  // Funció MOSTRAR TOTS ELS PRODUCTES -------------------       
+    /* FUNCIONS: */
+
+        public function mostraProductos(){  // MOSTRAR TOTS ELS PRODUCTES -------------------       
                 $resultat = $this->selectProductos();               
                 return $resultat;
         }  
         
-        public function mostraProducto(){  // Funció MOSTRAR PRODUCTE SOL a la FITXA PRODUCTE -------------------       
+        public function mostraProducto(){  // MOSTRAR PRODUCTE SOL a la FITXA PRODUCTE -------------------       
             $resultat = $this->selectProducto();
             return $resultat;
-    }         
+        }   
+        
+        public function mostraProductosCategoria(){ // <<<< MOSTRAR ELS PRODUCTES de la CATEGORIA -------------------       
+            $resultat = $this->selectProductosCategoria();               
+            return $resultat;
+    }  
 } 
 
 /* Mostra Exemple: -------------------------------------------------------------
