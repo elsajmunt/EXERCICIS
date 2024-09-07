@@ -1,5 +1,5 @@
 <?php
-class Producto extends Connection{ // CONEXIONS A LA BASE DE DADES
+class Producto extends Connection{ // CONEXIONS A LA BASE DE DADES 
 
     // SELECT ----- MOSTRAR TOTS ELS PRODUCTES a la Pàgina Productos:
     protected function selectProductos(){ // TOTS els Productes 
@@ -37,8 +37,10 @@ class Producto extends Connection{ // CONEXIONS A LA BASE DE DADES
             return;
         } 
     }
+} 
 
-    // SELECT ----- MOSTRAR TOTS ELS PRODUCTES d'una CATEGORIA: <<<<< Adaptar!
+/* 
+    // SELECT ----- MOSTRAR TOTS ELS PRODUCTES d'una CATEGORIA: <<<<< Adaptar!  
     protected function selectProductosCategoria(){ // Productes de la CATEGORIA
         $stmt = $this->connect()->prepare("SELECT * FROM productos WHERE IDCategoria=1"); // <<<< Adaptar ID genèric
         if(!$stmt->execute()){
@@ -52,4 +54,5 @@ class Producto extends Connection{ // CONEXIONS A LA BASE DE DADES
         }
         return $result; // retorna o el resultat de la base de dades o 0 en cas que no hi hagi dades.
     } 
-}
+*/
+

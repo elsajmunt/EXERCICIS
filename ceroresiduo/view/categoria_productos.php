@@ -9,15 +9,17 @@
     </head>
     <body>
         <?php require "header.php"?>  <!-- HEADER -->
+        <?php include ("../includes/categorias_productos-inc.php");?>
 
         <div class="content">    
+            <!--<h2>NOM CATEGORIA (HIGIENE PERSONAL, HOGAR...)</h2>  -->
+            <?php if($categorias!=0){?>
+                <?php foreach($categorias as $categoria): ?>
+            <h2><?= $categoria["Nombre"] ?></h2> <!-- NOM CATEGORIA (HIGIENE PERSONAL, HOGAR...)  -->
+            <?php endforeach ?>
+            <?php }?>  
 
-            <h2>HIGIENE PERSONAL...</h2> <!--<<<< Fer ADAPTACIÓ A CATEGORIES -->
-
-            <div class="product-list"> <!-- Llista PRODUCTES php -------------->
-                <?php
-                    include ("../includes/productos-inc.php");
-                ?>
+            <div class="product-list"> <!-- Llista PRODUCTES per CATEGPRIES-------------->
                     <?php if($productosCategoria!=0){?>
                     <?php foreach($productosCategoria as $producto): ?>
                 <div class="product-item">
@@ -32,7 +34,6 @@
         </div>
 
          <?php require "footer.php"?> <!-- FOOTER --> 
-
-        <script src="public/js/scripts.js"></script> 
+        <script src="../public/js/scripts.js"></script> 
     </body>
 </html>

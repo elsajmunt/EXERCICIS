@@ -1,0 +1,13 @@
+DESPLEGAMENT-PUJAR PROJECTE WEB
+
+ssh dsa0@
+147.83.7.203' 
+password: Mazinger72
+
+http://147.83.7.203/ceroresiduo/
+
+/var/www/html/paintitup (?)
+
+--
+PUJAR BD:
+http://147.83.7.203/phpMyAdmin/

@@ -1,4 +1,4 @@
-// BARRA MENÚ RESPONSIU --------------------------------
+// BARRA MENÚs RESPONSIUs -------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {     // MENÚ PRINCIPAL 
     const toggleButton = document.querySelector('.toggle-button');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {  // MENÚ CATEGORIES
 }); 
 
 
-// SLIDE SHOW: ----------------------------------
+// SLIDE SHOW: ---------------------------------------
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -48,4 +48,6 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-}
+} 
+
+// FORMULARIS: No funcionen a l'script.js--------------------------------------- 

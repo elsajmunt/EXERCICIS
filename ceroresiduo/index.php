@@ -44,7 +44,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
           </div> <!--SLIDE SHOW  FINAL -->
 
-            <h2>Tus Productos Zero Waste Favoritos</h2>
+            <h2>Tus Productos Zero Waste Favoritos!</h2>
 
             <div class="product-list"> <!--PRODUCTES -------------->
                 <div class="product-item">

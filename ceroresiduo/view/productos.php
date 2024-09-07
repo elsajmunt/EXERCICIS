@@ -11,13 +11,9 @@
         <?php require "header.php"?>  <!-- HEADER -->
 
         <div class="content"> <!--CONTNGUT -->
-
-            <h2>PRODUCTOS Zero Waste!</h2>
-
+            <h2>Tus Productos Zero Waste Favoritos!</h2>
             <div class="product-list"> <!-- Llista PRODUCTES php -------------->
-                <?php
-                    include ("../includes/productos-inc.php");
-                ?>
+                <?php include ("../includes/productos-inc.php");?>
                     <?php if($productos!=0){?>
                     <?php foreach($productos as $producto): ?>
                 <div class="product-item">
@@ -30,7 +26,7 @@
                 <?php }?>           
             </div>
         </div>
-        <!--  <div class="product-list">  Còpia PRODUCTES HTML ------------
+        <!--  <div class="product-list">  PRODUCTES HTML ------------
             <div class="product-item">
                 <a href="#"><img src="../public/images/products/JabonSolidoLavavajillas.webp" alt="Jabón Sólido Lavavajillas con Bicarbonato - 225 g">
                 <h3>Jabón Sólido Lavavajillas</h3></a>
@@ -39,7 +35,6 @@
             </div>              
         </div> -->
          <?php require "footer.php"?> <!-- FOOTER -->
-
-        <script src="public/js/scripts.js"></script> 
+        <script src="../public/js/scripts.js"></script> 
     </body>
 </html>

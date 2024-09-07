@@ -1,9 +1,9 @@
 <?php // MOSTRAR LLISTA TIENDAS 
 
           //instanciar las classes
-    require "../model/connection.php";
-    require "../model/tienda.php"; // Depèn de tienda.php - BD 
-    require "../controler/tiendaContr.php"; // Depèn de tiendaContr.php - Mètodes/Funcions
+    require_once "../model/connection.php";
+    require_once "../model/tienda.php"; // Depèn de tienda.php - BD 
+    require_once "../controler/tiendaContr.php"; // Depèn de tiendaContr.php - Mètodes/Funcions
 
     $tiendaContr = new TiendaContr(); // Classe del Controler   
     $tiendas = $tiendaContr->mostraTiendas(); // TOTES LES TIENDAS. mostraTiendas=>Funció de la Classe TiendaContr

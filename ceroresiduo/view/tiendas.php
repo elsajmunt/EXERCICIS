@@ -10,7 +10,7 @@
     <body>
         <?php require "header.php"?>  <!-- HEADER -->
         <div class="content"> <!--CONTNGUT -->
-            <h2>NUESTRAS TIENDAS Cero Residuo</h2>
+            <h2>Nuestras Tiendas Cero Residuo</h2>
             <div class="product-list"> <!-- Llista BOTIGUES  -------------->
                 <?php
                     include ("../includes/tiendas-inc.php");
@@ -28,6 +28,6 @@
             </div>
         </div>
          <?php require "footer.php"?> <!-- FOOTER -->
-        <script src="public/js/scripts.js"></script> 
+        <script src="../public/js/scripts.js"></script> 
     </body>
 </html>
