@@ -8,25 +8,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Per Disseny RESPONSIU?? -->
         <link rel="stylesheet" href="../public/css/styles.css">
-        <title>Cero Residuo > Productos</title>
+        <title>Cero Residuo</title>
     </head>
     <body>
-        <?php 
-          require "header.php"
-        ?>  <!-- HEADER -->
-        <?php include ("../includes/categorias_productos-inc.php");?>
+        <?php require "header_usuari.php"?>  <!-- HEADER USUARI REGISTRAT -->
 
-        <div class="content">    
-            <!--<h2>NOM CATEGORIA (HIGIENE PERSONAL, HOGAR...)</h2>  -->
-            <?php if($categorias!=0){?>
-                <?php foreach($categorias as $categoria): ?>
-            <h2><?= $categoria["Nombre"] ?></h2> <!-- NOM CATEGORIA (HIGIENE PERSONAL, HOGAR...)  -->
-            <?php endforeach ?>
-            <?php }?>  
-
-            <div class="product-list"> <!-- Llista PRODUCTES per CATEGPRIES-------------->
-                    <?php if($productosCategoria!=0){?>
-                    <?php foreach($productosCategoria as $producto): ?>
+        <div class="content"> <!--CONTNGUT -->
+            <h2>Tus Productos Zero Waste Favoritos!</h2>
+            <div class="product-list"> <!-- Llista PRODUCTES php -------------->
+                <?php include ("../includes/productos-inc.php");?>
+                    <?php if($productos!=0){?>
+                    <?php foreach($productos as $producto): ?>
                 <div class="product-item">
                         <a href="ficha_producto.php?id=<?= $producto["ID"] ?>"><img src="../public/images/products/<?= $producto["Foto"] ?>" alt=<?= $producto["Nombre"] ?>>
                         <h3><?= $producto["Nombre"] ?></h3></a>
@@ -37,7 +29,8 @@
                 <?php }?>           
             </div>
         </div>
-         <?php require "footer.php"?> <!-- FOOTER --> 
-        <script src="../public/js/scripts.js"></script> 
+         <?php require "../view/footer.php"?> <!-- FOOTER -->
+
+        <script src="public/js/scripts.js"></script> 
     </body>
 </html>

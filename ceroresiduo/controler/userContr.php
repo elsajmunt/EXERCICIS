@@ -1,15 +1,15 @@
 <?php 
 
-class UserContr extends User{
+class UserContr extends User{ 
     private $username;
     private $password;
-    private $repeatPwd;
+    //private $repeatPwd;
     private $email;
 
-    public function __construct($username, $password, $repeatPwd=null, $email=null){
+    public function __construct($username, $password, $email=null){
         $this->username = $username;
         $this->password = $password;
-        $this->repeatPwd = $repeatPwd;
+       // $this->repeatPwd = $repeatPwd;
         $this->email = $email;
     }
 
@@ -28,12 +28,12 @@ class UserContr extends User{
         return $this->password;
     }
    
-    public function setRepeatPwd($repeatPwd){
+   /* public function setRepeatPwd($repeatPwd){
         $this->repeatPwd = $repeatPwd;
     }
     public function getRepeatPwd(){
         return $this->repeatPwd;
-    }
+    }*/
     
     public function setEmail($email){
         $this->email = $email;
@@ -46,7 +46,11 @@ class UserContr extends User{
     public function signupUser(){
 
         //validation
-        if($this->emptyInput($this->username) == false || $this->emptyInput($this->password) == false || $this->emptyInput($this->repeatPwd) == false || $this->emptyInput($this->email) == false){
+        if(
+            $this->emptyInput($this->username) == false || 
+            $this->emptyInput($this->password) == false || 
+            $this->emptyInput($this->email) == false)
+        {
             header("Location: ../view/signup.php?error=emptyInput");
             exit();
         }
@@ -54,14 +58,15 @@ class UserContr extends User{
         header("Location: ../view/signup.php?error=invaliduid");
         exit();
         }
-        if($this->invalidEmail() == false){
+       /* 
+       if($this->invalidEmail() == false){
             header("Location: ../view/signup.php?error=invalidemail");
             exit();
         }
         if($this->pwdMatch() == false){
             header("Location: ../view/signup.php?error=pwdmatch");
             exit();
-        }
+        }*/
         if($this->usernameTakenChec() == false){
             header("Location: ../view/signup.php?error=usermailtaken");
             exit();
@@ -90,6 +95,8 @@ class UserContr extends User{
         if($res==2){
             header("Location: ../index.php?error=invalidPassUser");
         }
+
+        // Crear Sesió....
     }
     private function emptyInput($input){
         $result = true;
@@ -108,6 +115,7 @@ class UserContr extends User{
         return $result;
     }
 
+    /*
     private function invalidEmail(){
         $result = true;
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
@@ -122,7 +130,7 @@ class UserContr extends User{
             $result = false;
         }
         return $result;
-    }
+    } */
 
     private function usernameTakenChec(){
         $result = true;

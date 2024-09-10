@@ -1,9 +1,9 @@
 <?php
-class User extends Connection{
-
+class User extends Connection{ 
+    
     protected function setUser($username, $password, $email){
         $error = false;
-        $stmt = $this->connect()->prepare("INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?,?,?)");
+        $stmt = $this->connect()->prepare("INSERT INTO usuarios (NombreUnico, Pasword, Email) VALUES (?,?,?)");
 
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
@@ -12,11 +12,10 @@ class User extends Connection{
         }
         $stmt = null;
         return $error;
-
     }
 
     protected function checkUser($username, $email){
-        $stmt = $this->connect()->prepare("SELECT users_uid FROM users WHERE users_uid = ? OR users_email = ?;");
+        $stmt = $this->connect()->prepare("SELECT ID FROM usuarios WHERE NombreUnico = ? OR Email = ?;");
         if(!$stmt->execute(array($username, $email))){
             $stmt = null;
             header("Location: .../view/signup.html?error=stmtfailed");
@@ -32,7 +31,7 @@ class User extends Connection{
 
     protected function verifyLoginUser($username, $password){
         $error = 0;
-        $stmt = $this->connect()->prepare("SELECT password from users WHERE users_uid = ?");
+        $stmt = $this->connect()->prepare("SELECT Pasword from usuarios WHERE NombreUnico = ?");
         $status = 1;
         if(!$stmt->execute(array($username))){
             $error = 1;
@@ -40,18 +39,16 @@ class User extends Connection{
 
         if($stmt->rowCount()>0){
             $res = $stmt->fetchAll();
-            $hashedPwd = $res[0]['users_pwd'];
+            $hashedPwd = $res[0]['Pasword'];
             if(password_verify($password, $hashedPwd)==false){
                 $error = 2;
             }else{
-                $_SESSION["username"] = $username;
+                $_SESSION["NombreUnico"] = $username;
             }
         }else{
             $error = 2;
         }
         $stmt = null;
         return $error;
-
     }
-
 }

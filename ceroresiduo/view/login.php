@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include_once("../constants.php");?>
+<!DOCTYPE html> <!-- LOGIN.  / INICIA SESIÓN -->   
 <html> 
     <head>
         <meta charset=UTF8>
@@ -12,7 +13,7 @@
         <?php require "header.php"?>  <!-- HEADER -->   
         <div class="content">
             <div>
-                <form onsubmit="return validarFormulari_Login()" id="formulario"><!-- id formulario d'estils CSS. Funció JS -->   
+                <form onsubmit="return validarFormulari_Login()" id="formulario" method="post" action="../includes/login-inc.php"><!-- id formulario d'estils CSS. Funció JS -->   
                     <h2>Inicia Sesión</h2>
 
                     <!-- Entrada NOM USUARI ------------------------------>
@@ -21,7 +22,7 @@
                         <i class="fas fa-user"></i> <!-- Icona Usuari (de Biblioteca stylesheet)-->
                         <input
                                 type="text"
-                                name="username"
+                                name="uid"
                                 id="nombreDeUsuario"
                                 placeholder="Introducir nombre"
                         />
@@ -37,7 +38,7 @@
                         <i class="fas fa-lock"></i>
                         <input
                                 type="password"
-                                name="password"
+                                name="pwd"
                                 id="contrasenaDeUsuario"
                                 placeholder="Introducir contraseña"
                         />
@@ -55,7 +56,7 @@
         <?php require "footer.php"?> <!-- FOOTER -->
         <script src="../public/js/scripts.js"></script> 
     </body> 
-    <script>  // Poso aquí l'Script perquè al document scrip.js No Funciona! -----------------------------------------------
+    <script>  // JS. Poso aquí l'Script perquè al document scrip.js No Funciona! -----------------------------------------------
         function validarFormulari_Login(){            
             let nombre = document.getElementById("nombreDeUsuario").value.trim() // Cambio "nombre" per "nombreDeUsuario" 
             let nombreError = document.getElementById("nombreError_id") //accedo al elemento nombreError_id.     

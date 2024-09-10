@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include_once("../constants.php");?>
+<!DOCTYPE html> <!-- SING UP.  / REGÍSTATE -->   
 <html> 
     <head>
         <meta charset=UTF8>
@@ -8,12 +9,12 @@
         <title>Cero Residuo > Regístrate</title>    
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!-- ICONES? -->
     </head>
-
     <body>
         <?php require "header.php"?>  <!-- HEADER -->   
         <div class="content">
+
             <div>
-                <form onsubmit="return validarFormulari_Signup()" id="formulario"><!-- id formulario d'estils CSS. Funció JS -->   
+                <form onsubmit="return validarFormulari_Signup()" id="formulario" method="post" action="../includes/signup-inc.php"><!-- id formulario d'estils CSS. Funció JS -->   
                     <h2>Regístrate</h2>
 
                     <!-- Entrada NOM USUARI ------------------------------>
@@ -22,7 +23,7 @@
                         <i class="fas fa-user"></i> <!-- Icona Usuari (de Biblioteca stylesheet)-->
                         <input
                                 type="text"
-                                name="username"
+                                name="uid"
                                 id="nombreDeUsuario"
                                 placeholder="Introducir nombre"
                         />
@@ -70,7 +71,7 @@
                         <i class="fas fa-lock"></i>
                         <input
                                 type="password"
-                                name="password"
+                                name="pwd"
                                 id="contrasenaDeUsuario"
                                 placeholder="Introducir contraseña"
                         />

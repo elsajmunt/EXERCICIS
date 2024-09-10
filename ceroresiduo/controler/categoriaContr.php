@@ -1,6 +1,5 @@
 <?php
-
-include_once "../model/categoria.php";
+include_once BASE_PROJECTE."/model/categoria.php";
 
 class categoriaContr extends Categoria { // Classe Categoria a la carpeta Model 
     private $nombre;     

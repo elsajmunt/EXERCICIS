@@ -3,7 +3,7 @@ session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // recoger datos del formulario
-    $username = $_POST["uid"];
+    $username = $_POST["uid"]; // User Unic Id => NombreUnico (Columna Usuarios de la BD)
     $password = $_POST["pwd"];
 
 
@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $login->loginUser();
 
     //Volver a la pagina inicial
-    header("Location: ../view/vols.php");
+    header("Location: ../index.php");   
+    // header("Location: ../view/productos.php");
 
 }
