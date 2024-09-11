@@ -1,5 +1,5 @@
 <?php
-class User extends Connection{ 
+class User extends Connection{  
     
     protected function setUser($username, $password, $email){
         $error = false;
@@ -43,7 +43,7 @@ class User extends Connection{
             if(password_verify($password, $hashedPwd)==false){
                 $error = 2;
             }else{
-                $_SESSION["NombreUnico"] = $username;
+                $_SESSION["NombreUnico"] = $username; // LOGIN - INICI SESIÓ
             }
         }else{
             $error = 2;

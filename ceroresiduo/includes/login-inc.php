@@ -1,11 +1,10 @@
 <?php
-session_start();
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+session_start();  
+if($_SERVER["REQUEST_METHOD"] == "POST"){   
 
     // recoger datos del formulario
     $username = $_POST["uid"]; // User Unic Id => NombreUnico (Columna Usuarios de la BD)
     $password = $_POST["pwd"];
-
 
     require "autoload.models.php";
     require "autoload.controlers.php";
@@ -15,6 +14,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //Volver a la pagina inicial
     header("Location: ../index.php");   
-    // header("Location: ../view/productos.php");
-
+    // header("Location: ../view/index_usuari.php");  
 }

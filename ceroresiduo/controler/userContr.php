@@ -1,6 +1,6 @@
 <?php 
 
-class UserContr extends User{ 
+class UserContr extends User{   
     private $username;
     private $password;
     //private $repeatPwd;
@@ -95,8 +95,6 @@ class UserContr extends User{
         if($res==2){
             header("Location: ../index.php?error=invalidPassUser");
         }
-
-        // Crear Sesió....
     }
     private function emptyInput($input){
         $result = true;

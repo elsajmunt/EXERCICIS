@@ -6,11 +6,8 @@
       <li><a href="/ceroresiduo/index.php">Home</a></li>
       <li><a href="/ceroresiduo/view/productos.php">Productos</a></li>
       <li><a href="/ceroresiduo/view/tiendas.php">Tiendas</a></li>
-      <li><a href="#">Regístrate</a></li>
-      <li><a href="#">Inicia Sesión</a></li>
+      <li><a href="/ceroresiduo/view/signup.php">Regístrate</a></li>
+      <li><a href="/ceroresiduo/view/login.php">Inicia Sesión</a></li>
     </ul>
     <p>© 2024 Elsa Jiménez Munt</p>
 </footer>
-
-
-  

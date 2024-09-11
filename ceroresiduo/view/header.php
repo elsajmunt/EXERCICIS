@@ -1,49 +1,53 @@
-<header>
-    <nav class="navbar"> <!-- BARRA MENÚ PRINCIPAL ---------- -->
-        <div><a href="/ceroresiduo/index.php"> <img src="/ceroresiduo/public/images/header/Logo-cero-residuo-250-125c.webp" alt="Logo Cero Residuo" class="brand-title"></a></div>
-        <a href="#" class="toggle-button"> <!-- MENÚ Desplegable Format MÒBILS... -->
-            <span class="bar"></span> <!-- Línia/Simbol Menú Mobil -->
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <div class="navbar-links"> <!--Format PANTALLA AMPLA -->
-            <ul>
-            <!--<li><a href="../includes/productos-inc.php">Productos</a></li>-->
-                <li><a href="/ceroresiduo/view/productos.php">Productos</a></li>
-                <li><a href="/ceroresiduo/view/tiendas.php">Tiendas</a></li>
-                <li><a href="/ceroresiduo/view/signup.php">Regístrate</a></li>
-            <!-- if isset ... $_SESSION["NombreUnico"] ...  << PENDENT INICI SESIÓ........... -->
-                <li><a href="/ceroresiduo/view/mispedidos.php">Mis pedidos</a></li>
-                <li><a href="/ceroresiduo/view/misdatos.php">Mis datos</a></li>
-                <li><a href="/ceroresiduo/index.php">Cierra Sesión</a></li>
-            <!-- else... <<.... -->
-                <li><a href="/ceroresiduo/view/login.php">Inicia Sesión</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav class="navbarcategories"> <!-- BARRA MENÚ CATEGORIES ----------  -->
-        <a href="#" class="toggle-buttoncategories"> <!-- MENÚ Desplegable Format MÒBILS... -->
-            <span class="barcateg"></span> 
-            <span class="barcateg"></span>
-            <span class="barcateg"></span>
-        </a> 
-        <div class="navbarcategories-links"> <!--Format PANTALLA AMPLA -->
-            
-        <?php 
-          include_once (BASE_PROJECTE."/includes/header-inc.php"); // BASE_PROJECTE està a constants.php
-        ?>
-            <ul>
-            <?php if($categoriasMenu!=0){?>                 
-            <?php foreach($categoriasMenu as $categoria): ?>
-                <div>
-                <li><a href="/ceroresiduo/view/categoria_productos.php?id=<?= $categoria["ID"] ?>"><?= $categoria["Nombre"] ?></a></li>
-                </div>
-            <?php endforeach ?>
-            <?php }?>  
-            </ul>
-        </div>        
-    </nav>
-</header>  
+<body>
+    <header>
+        <nav class="navbar"> <!-- BARRA MENÚ PRINCIPAL ------------------------------------------------------------------- -->
+            <div><a href="/ceroresiduo/index.php"> <img src="/ceroresiduo/public/images/header/Logo-cero-residuo-250-125c.webp" alt="Logo Cero Residuo" class="brand-title"></a></div>
+            <a href="#" class="toggle-button"> <!-- MENÚ Desplegable Format MÒBILS... -->
+                <span class="bar"></span> <!-- Línia/Simbol Menú Mobil -->
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links"> <!--Format Pantalla Ambpla -->
+                <ul>
+                    <li><a href="/ceroresiduo/view/productos.php">Productos</a></li>
+                    <li><a href="/ceroresiduo/view/tiendas.php">Tiendas</a></li>
+                    <li><a href="/ceroresiduo/view/signup.php">Regístrate</a></li>
+                <?php //session_start(); // Si Inici Sessió, mostra: (No funciona!!!) session_start està a login-inc.php
+                    if (isset($_SESSION["NombreUnico"])) { ?>  <!-- $_SESSION["NombreUnico"] està a model/User.php -->       
+                        <li><a href="/ceroresiduo/view/mispedidos.php">Mis pedidos</a></li>
+                        <li><a href="/ceroresiduo/view/misdatos.php">Mis datos</a></li>
+                        <li><a href="/ceroresiduo/index.php">Cierra Sesión</a></li>                    
+                        <li>Hola, <?php echo htmlspecialchars($_SESSION['NombreUnico']); ?>!</li>  <!-- $username -->
+                <?php }                             
+                    else { ?> <!-- Si No Inici Sessió, mostra: -->
+                        <li><a href="/ceroresiduo/view/login.php">Inicia Sesión</a></li>
+                    <?php } ?>                     
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbarcategories"> <!-- BARRA MENÚ CATEGORIES -----------------------------------------------  -->
+            <a href="#" class="toggle-buttoncategories"> <!-- MENÚ Desplegable Format MÒBILS... -->
+                <span class="barcateg"></span> 
+                <span class="barcateg"></span>
+                <span class="barcateg"></span>
+            </a> 
+            <div class="navbarcategories-links"> <!-- Format Pantalla Ambpla -->           
+            <?php 
+            include_once (BASE_PROJECTE."/includes/header-inc.php"); // BASE_PROJECTE està a constants.php
+            ?>
+                <ul>
+                <?php if($categoriasMenu!=0){?>                 
+                <?php foreach($categoriasMenu as $categoria): ?>
+                    <div>
+                    <li><a href="/ceroresiduo/view/categoria_productos.php?id=<?= $categoria["ID"] ?>"><?= $categoria["Nombre"] ?></a></li>
+                    </div>
+                <?php endforeach ?>
+                <?php }?>  
+                </ul>
+            </div>        
+        </nav>
+    </header>  
+</body>
 
 
                 
