@@ -1,6 +1,6 @@
 <?php
 class User extends Connection{  
-    
+     
     protected function setUser($username, $password, $email){
         $error = false;
         $stmt = $this->connect()->prepare("INSERT INTO usuarios (NombreUnico, Pasword, Email) VALUES (?,?,?)");
@@ -29,7 +29,7 @@ class User extends Connection{
         return $resultCheck;
     }
 
-    protected function verifyLoginUser($username, $password){
+    protected function verifyLoginUser($username, $password){  
         $error = 0;
         $stmt = $this->connect()->prepare("SELECT Pasword from usuarios WHERE NombreUnico = ?");
         $status = 1;

@@ -1,5 +1,6 @@
 <?php 
-          include_once("../constants.php");
+    include_once("../constants.php");
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>  

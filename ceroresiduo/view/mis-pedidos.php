@@ -9,13 +9,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Per Disseny RESPONSIU?? -->
         <link rel="stylesheet" href="../public/css/styles.css">
-        <title>Cero Residuo > Productos</title>
+        <title>Cero Residuo > Mis Pedidos</title>
     </head>
     <body>
         <?php require "header.php"?>  <!-- HEADER -->
 
         <div class="content"> <!--CONTNGUT -->
-            <h2>Tus Productos Zero Waste Favoritos!</h2>
+            <h2>Mis Pedidos</h2>
             <div class="product-list"> <!-- Llista PRODUCTES php -------------->
                 <?php include ("../includes/productos-inc.php");?>
                     <?php if($productos!=0){?>
@@ -30,14 +30,6 @@
                 <?php }?>           
             </div>
         </div>
-        <!--  <div class="product-list">  PRODUCTES HTML ------------
-            <div class="product-item">
-                <a href="#"><img src="../public/images/products/JabonSolidoLavavajillas.webp" alt="Jabón Sólido Lavavajillas con Bicarbonato - 225 g">
-                <h3>Jabón Sólido Lavavajillas</h3></a>
-                <p>con Bicarbonato - 225 g</p>
-                <div class="product-item-preu">6,10€</div>
-            </div>              
-        </div> -->
          <?php require "footer.php"?> <!-- FOOTER -->
         <script src="../public/js/scripts.js"></script> 
     </body>

@@ -95,6 +95,9 @@ class UserContr extends User{
         if($res==2){
             header("Location: ../index.php?error=invalidPassUser");
         }
+        if($res ==3){
+            header("Location: ../index.php?error=nosessopn");
+        }
     }
     private function emptyInput($input){
         $result = true;

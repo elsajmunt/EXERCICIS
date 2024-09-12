@@ -10,16 +10,16 @@
             <div class="navbar-links"> <!--Format Pantalla Ambpla -->
                 <ul>
                     <li><a href="/ceroresiduo/view/productos.php">Productos</a></li>
-                    <li><a href="/ceroresiduo/view/tiendas.php">Tiendas</a></li>
-                    <li><a href="/ceroresiduo/view/signup.php">Regístrate</a></li>
-                <?php //session_start(); // Si Inici Sessió, mostra: (No funciona!!!) session_start està a login-inc.php
+                    <li><a href="/ceroresiduo/view/tiendas.php">Tiendas</a></li>                   
+                <?php // Si Inici Sessió, mostra: 
                     if (isset($_SESSION["NombreUnico"])) { ?>  <!-- $_SESSION["NombreUnico"] està a model/User.php -->       
-                        <li><a href="/ceroresiduo/view/mispedidos.php">Mis pedidos</a></li>
-                        <li><a href="/ceroresiduo/view/misdatos.php">Mis datos</a></li>
-                        <li><a href="/ceroresiduo/index.php">Cierra Sesión</a></li>                    
-                        <li>Hola, <?php echo htmlspecialchars($_SESSION['NombreUnico']); ?>!</li>  <!-- $username -->
+                        <li><a href="/ceroresiduo/view/mis-pedidos.php">Mis pedidos</a></li>
+                        <li><a href="/ceroresiduo/view/mis-datos.php">Mis datos</a></li>
+                        <li><a href="/ceroresiduo/includes/logout.php">Cierra Sesión</a></li>                    
+                        <li>Hola, <?php echo htmlspecialchars($_SESSION['NombreUnico']); ?>!</li> 
                 <?php }                             
                     else { ?> <!-- Si No Inici Sessió, mostra: -->
+                        <li><a href="/ceroresiduo/view/signup.php">Regístrate</a></li>
                         <li><a href="/ceroresiduo/view/login.php">Inicia Sesión</a></li>
                     <?php } ?>                     
                 </ul>

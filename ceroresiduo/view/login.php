@@ -28,8 +28,8 @@
                         />
                         <div id="nombreError_id" class="error"></div><!-- Mostra Avís CAMPS OBLIGATORIS. ESTIL amb Classe -->
                         <i class="fas fa-exclamation-circle failure-icon"></i><!-- Icona Exlamació ! Quan surt??-->
-                        <i class="far fa-check-circle success-icon"></i><!-- Icona V Quan surt?? -->
-                        <div class="error"></div><!-- No sé què fa ?? -->
+                        <i class="far fa-check-circle success-icon"></i><!-- Icona V  -->
+                        <div class="error"></div>
                     </div>
 
                     <!--   Entrada CONTRASENYA ----------------------------------------->
@@ -87,7 +87,7 @@
                 contrasenaError.innerHTML = "El campo debe tener letras y números." // Sempre surt Avís! amb lletres i números també!!!?
                 NoError = false
             }else{
-                contrasenaError.innerHTML ="Contrasenya Correcta!!!!"
+                contrasenaError.innerHTML =" "
             }
         
             return NoError //Si no hay ningun error ENVIAR el formulario. (NoError=true)          
